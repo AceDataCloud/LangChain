@@ -31,3 +31,13 @@ jobs:
         with:
           name: packages-${{ matrix.python-version }}
           path: dist/*
+  registry-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install public candidate packages from PyPI
+        run: python -m pip install 'langchain-acedatacloud==0.1.0rc1' 'langchain-happyhorse-acedatacloud==0.1.0rc1' 'langchain-gpt-image-acedatacloud==0.1.0rc1' 'langchain-nano-banana-acedatacloud==0.1.0rc1'
+      - run: python scripts/verify_published.py

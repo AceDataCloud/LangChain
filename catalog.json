@@ -4,7 +4,9 @@
     "package": "langchain-acedatacloud",
     "class": "ChatAceDataCloud",
     "provider_id": "acedatacloud",
-    "upstream_builtin": false
+    "upstream_builtin": false,
+    "publication": "PyPI 0.1.0rc1 wheel published",
+    "official_listing": "not yet submitted"
   },
   "services": [
     {
@@ -25,7 +27,7 @@
         "audio"
       ],
       "category": "music",
-      "publication": "not published",
+      "publication": "not published: HTTP 429",
       "official_listing": "not submitted"
     },
     {
@@ -45,7 +47,7 @@
         "video"
       ],
       "category": "video",
-      "publication": "not published",
+      "publication": "not published: HTTP 429",
       "official_listing": "not submitted"
     },
     {
@@ -65,7 +67,7 @@
         "video"
       ],
       "category": "video",
-      "publication": "not published",
+      "publication": "PyPI 0.1.0rc1 wheel published",
       "official_listing": "not submitted"
     },
     {
@@ -86,7 +88,7 @@
         "image"
       ],
       "category": "image",
-      "publication": "not published",
+      "publication": "PyPI 0.1.0rc1 wheel published",
       "official_listing": "not submitted"
     },
     {
@@ -107,7 +109,7 @@
         "image"
       ],
       "category": "image",
-      "publication": "not published",
+      "publication": "PyPI 0.1.0rc1 wheel published",
       "official_listing": "not submitted"
     }
   ]
