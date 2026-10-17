@@ -6,12 +6,12 @@ Install `langchain-happyhorse-acedatacloud` to give a LangChain application type
 
 ## 1. Install
 
-Intended official registry entry: [PyPI `langchain-happyhorse-acedatacloud`](https://pypi.org/project/langchain-happyhorse-acedatacloud/). **Publication and LangChain official listing are pending review; no marketplace listing is claimed.** After publication:
+Intended official registry entry: [PyPI `langchain-happyhorse-acedatacloud`](https://pypi.org/project/langchain-happyhorse-acedatacloud/). **PyPI `0.1.0rc1` candidate is published; [LangChain listing request](https://github.com/langchain-ai/docs/issues/6810) is OPEN and unapproved.** This prerelease is from the open implementation PR:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install langchain-happyhorse-acedatacloud
+python -m pip install langchain-happyhorse-acedatacloud==0.1.0rc1
 ```
 
 For current PR preview: clone `AceDataCloud/LangChain`, then `pip install -e packages/core -e packages/happyhorse`.

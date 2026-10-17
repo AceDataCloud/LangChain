@@ -6,7 +6,7 @@ Install `langchain-seedance-acedatacloud` to give a LangChain application typed 
 
 ## 1. Install
 
-Intended official registry entry: [PyPI `langchain-seedance-acedatacloud`](https://pypi.org/project/langchain-seedance-acedatacloud/). **Publication and LangChain official listing are pending review; no marketplace listing is claimed.** After publication:
+Intended official registry entry: [PyPI `langchain-seedance-acedatacloud`](https://pypi.org/project/langchain-seedance-acedatacloud/). **PyPI publication stopped at HTTP 429; no official listing is claimed.** All candidate wheels are available in the [GitHub prerelease](https://github.com/AceDataCloud/LangChain/releases/tag/v0.1.0rc1). The PyPI command below is for after publication:
 
 ```bash
 python3 -m venv .venv

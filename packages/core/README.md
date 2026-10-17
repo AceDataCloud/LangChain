@@ -2,9 +2,9 @@
 
 A named `ChatAceDataCloud` chat model and **five separately installable service toolkits**: Suno, Seedance, HappyHorse, GPT Image and Nano Banana **by Ace Data Cloud**. This project is maintained by Ace Data Cloud; it is not an official client of those service brands.
 
-[简体中文](https://github.com/AceDataCloud/LangChain/blob/codex/native-provider-service-toolkits/readme/README_zh_Hans.md) · [Privacy](PRIVACY.md) · [Source](https://github.com/AceDataCloud/LangChain)
+[简体中文](readme/README_zh_Hans.md) · [Privacy](PRIVACY.md) · [Source](https://github.com/AceDataCloud/LangChain)
 
-**Release candidate / review:** source and wheels are prepared in this PR. PyPI publication and official LangChain directory review are separate gates. The install links below are intended publication destinations and do not claim a published package. There is no newly added graphical chat button. The class does not silently patch LangChain's built-in provider registry.
+**Release candidate / review:** four `0.1.0rc1` packages are on PyPI; Suno and Seedance uploads stopped at HTTP 429. See [current release status](https://github.com/AceDataCloud/LangChain/blob/codex/native-provider-service-toolkits/RELEASE_STATUS.md) for exact per-package availability. This is a prerelease from an open implementation PR, not a merged stable release. PyPI publication and official LangChain directory review are separate gates. There is no newly added graphical chat button. The class does not silently patch LangChain's built-in provider registry.
 
 ## Install only the integration you need
 
@@ -23,9 +23,9 @@ Use Python 3.10+ in a virtual environment. Each service package installs only it
 python3 -m venv .venv
 source .venv/bin/activate
 # After publication:
-python -m pip install langchain-acedatacloud
-# Or one service:
-python -m pip install langchain-suno-acedatacloud
+python -m pip install langchain-acedatacloud==0.1.0rc1
+# Or a currently published service candidate:
+python -m pip install langchain-happyhorse-acedatacloud==0.1.0rc1
 ```
 
 For the current source preview, clone this repository, then run `pip install -e packages/core -e packages/suno`. Build artifacts from PR CI are offline-testable wheels, not proof of official listing.

@@ -6,7 +6,7 @@
     "provider_id": "acedatacloud",
     "upstream_builtin": false,
     "publication": "PyPI 0.1.0rc1 wheel published",
-    "official_listing": "not yet submitted"
+    "official_listing": "https://github.com/langchain-ai/docs/issues/6809 (OPEN, not approved)"
   },
   "services": [
     {
@@ -28,7 +28,7 @@
       ],
       "category": "music",
       "publication": "not published: HTTP 429",
-      "official_listing": "not submitted"
+      "official_listing": "not submitted: package missing on PyPI"
     },
     {
       "slug": "seedance",
@@ -48,7 +48,7 @@
       ],
       "category": "video",
       "publication": "not published: HTTP 429",
-      "official_listing": "not submitted"
+      "official_listing": "not submitted: package missing on PyPI"
     },
     {
       "slug": "happyhorse",
@@ -68,7 +68,7 @@
       ],
       "category": "video",
       "publication": "PyPI 0.1.0rc1 wheel published",
-      "official_listing": "not submitted"
+      "official_listing": "https://github.com/langchain-ai/docs/issues/6810 (OPEN, not approved)"
     },
     {
       "slug": "gpt-image",
@@ -89,7 +89,7 @@
       ],
       "category": "image",
       "publication": "PyPI 0.1.0rc1 wheel published",
-      "official_listing": "not submitted"
+      "official_listing": "https://github.com/langchain-ai/docs/issues/6811 (OPEN, not approved)"
     },
     {
       "slug": "nano-banana",
@@ -110,7 +110,7 @@
       ],
       "category": "image",
       "publication": "PyPI 0.1.0rc1 wheel published",
-      "official_listing": "not submitted"
+      "official_listing": "https://github.com/langchain-ai/docs/issues/6812 (OPEN, not approved)"
     }
   ]
 }

@@ -109,3 +109,8 @@ python -m twine check dist/*
 ```
 
 The repository is a single source for shared transport/task behavior. Packages have independent identities, service names, schemas and listing materials. The [LangChain integration process](https://docs.langchain.com/oss/python/contributing/integrations-langchain) requires published packages and a listing issue; see `submissions/` for reviewable forms. No unsolicited manual listing PR or promotional message is sent.
+
+
+## Official requests (2026-10-18)
+
+These are submissions, not approved entries: [ChatAceDataCloud](https://github.com/langchain-ai/docs/issues/6809), [HappyHorse by Ace Data Cloud](https://github.com/langchain-ai/docs/issues/6810), [GPT Image by Ace Data Cloud](https://github.com/langchain-ai/docs/issues/6811), [Nano Banana by Ace Data Cloud](https://github.com/langchain-ai/docs/issues/6812). The [native default-provider request](https://github.com/langchain-ai/langchain/issues/41291) is separate. Suno and Seedance will be eligible for listing after their PyPI upload succeeds; do not submit a false publication confirmation.
