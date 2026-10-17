@@ -1,0 +1,11 @@
+{
+  "repository": "AceDataCloud/SunoDify",
+  "revision": "8d3d03570e73324220f111f7fe343da0792a8071",
+  "type": "existing real Ace console screenshots with redacted credentials",
+  "downloaded": "2026-10-18",
+  "files": [
+    "get-api-key-en.png",
+    "create-api-key-en.png"
+  ],
+  "limitation": "Console screenshots only; do not imply LangChain GUI or a new paid run."
+}

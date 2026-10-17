@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "langchain-gpt-image-acedatacloud"
+version = "0.1.0rc1"
+description = "GPT Image by Ace Data Cloud LangChain toolkit"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name="Ace Data Cloud Dev", email="dev@acedata.cloud"}]
+keywords = ["gpt-image", "gpt image", "image", "langchain", "acedatacloud"]
+dependencies = ["langchain-acedatacloud==0.1.0rc1"]
+classifiers = ["Programming Language :: Python :: 3", "Operating System :: OS Independent"]
+
+[project.urls]
+Homepage = "https://github.com/AceDataCloud/LangChain"
+Source = "https://github.com/AceDataCloud/LangChain"
+Issues = "https://github.com/AceDataCloud/LangChain/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/langchain_gpt_image_acedatacloud"]
