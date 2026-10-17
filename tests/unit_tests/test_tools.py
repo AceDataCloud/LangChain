@@ -148,3 +148,17 @@ def test_missing_submission_id_is_not_claimed_as_pending_or_retried():
 def test_finished_error_without_success_flag_is_failed():
     result = task_result({"finished_at": 2, "response": {"error": {"code": "moderation"}}})
     assert result["status"] == "failed" and result["terminal"] is True
+
+
+@pytest.mark.parametrize("slug,cls,endpoint,query", SERVICES)
+def test_async_generation_submits_once(slug, cls, endpoint, query):
+    seen = []
+
+    def handler(request):
+        seen.append((request.url.path, json.loads(request.content)))
+        return httpx.Response(200, json={"task_id": "owned-async"})
+
+    generate = toolkit(slug, cls, handler).get_tools()[0]
+    result = asyncio.run(generate.ainvoke({"prompt": "sunrise"}))
+    assert result["task_id"] == "owned-async" and result["terminal"] is False
+    assert len(seen) == 1 and seen[0][0] == endpoint and seen[0][1]["async"] is True
