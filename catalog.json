@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "chat": {
+    "package": "langchain-acedatacloud",
+    "class": "ChatAceDataCloud",
+    "provider_id": "acedatacloud",
+    "upstream_builtin": false,
+    "publication": "PyPI 0.1.0rc1 wheel published",
+    "official_listing": "https://github.com/langchain-ai/docs/issues/6809 (OPEN, not approved)"
+  },
+  "services": [
+    {
+      "slug": "suno",
+      "display_name": "Suno by Ace Data Cloud",
+      "package": "langchain-suno-acedatacloud",
+      "module": "langchain_suno_acedatacloud",
+      "toolkit": "SunoToolkit",
+      "tool_names": [
+        "suno_generate_audio",
+        "suno_retrieve_task"
+      ],
+      "endpoint": "/suno/audios",
+      "task_endpoint": "/suno/tasks",
+      "keywords": [
+        "suno",
+        "music",
+        "audio"
+      ],
+      "category": "music",
+      "publication": "not published: HTTP 429",
+      "official_listing": "not submitted: package missing on PyPI"
+    },
+    {
+      "slug": "seedance",
+      "display_name": "Seedance by Ace Data Cloud",
+      "package": "langchain-seedance-acedatacloud",
+      "module": "langchain_seedance_acedatacloud",
+      "toolkit": "SeedanceToolkit",
+      "tool_names": [
+        "seedance_generate_video",
+        "seedance_retrieve_task"
+      ],
+      "endpoint": "/seedance/videos",
+      "task_endpoint": "/seedance/tasks",
+      "keywords": [
+        "seedance",
+        "video"
+      ],
+      "category": "video",
+      "publication": "not published: HTTP 429",
+      "official_listing": "not submitted: package missing on PyPI"
+    },
+    {
+      "slug": "happyhorse",
+      "display_name": "HappyHorse by Ace Data Cloud",
+      "package": "langchain-happyhorse-acedatacloud",
+      "module": "langchain_happyhorse_acedatacloud",
+      "toolkit": "HappyHorseToolkit",
+      "tool_names": [
+        "happyhorse_generate_video",
+        "happyhorse_retrieve_task"
+      ],
+      "endpoint": "/happyhorse/videos",
+      "task_endpoint": "/happyhorse/tasks",
+      "keywords": [
+        "happyhorse",
+        "video"
+      ],
+      "category": "video",
+      "publication": "PyPI 0.1.0rc1 wheel published",
+      "official_listing": "https://github.com/langchain-ai/docs/issues/6810 (OPEN, not approved)"
+    },
+    {
+      "slug": "gpt-image",
+      "display_name": "GPT Image by Ace Data Cloud",
+      "package": "langchain-gpt-image-acedatacloud",
+      "module": "langchain_gpt_image_acedatacloud",
+      "toolkit": "GPTImageToolkit",
+      "tool_names": [
+        "gpt_image_generate_image",
+        "gpt_image_retrieve_task"
+      ],
+      "endpoint": "/openai/images/generations",
+      "task_endpoint": "/openai/tasks",
+      "keywords": [
+        "gpt-image",
+        "gpt image",
+        "image"
+      ],
+      "category": "image",
+      "publication": "PyPI 0.1.0rc1 wheel published",
+      "official_listing": "https://github.com/langchain-ai/docs/issues/6811 (OPEN, not approved)"
+    },
+    {
+      "slug": "nano-banana",
+      "display_name": "Nano Banana by Ace Data Cloud",
+      "package": "langchain-nano-banana-acedatacloud",
+      "module": "langchain_nano_banana_acedatacloud",
+      "toolkit": "NanoBananaToolkit",
+      "tool_names": [
+        "nano_banana_generate_image",
+        "nano_banana_retrieve_task"
+      ],
+      "endpoint": "/nano-banana/images",
+      "task_endpoint": "/nano-banana/tasks",
+      "keywords": [
+        "nano-banana",
+        "nano banana",
+        "image"
+      ],
+      "category": "image",
+      "publication": "PyPI 0.1.0rc1 wheel published",
+      "official_listing": "https://github.com/langchain-ai/docs/issues/6812 (OPEN, not approved)"
+    }
+  ]
+}

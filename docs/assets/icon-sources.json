@@ -1,0 +1,27 @@
+[
+  {
+    "service": "suno",
+    "source": "https://github.com/AceDataCloud/SunoDify/blob/0b96ef5afc74068428c65f895b4ee63c89361523/_assets/icon.jpg",
+    "local": "packages/suno/icon.jpg"
+  },
+  {
+    "service": "seedance",
+    "source": "https://github.com/AceDataCloud/SeedanceDify/blob/06499222668b5582d730ce9b50b6465cfc44270f/_assets/icon.png",
+    "local": "packages/seedance/icon.png"
+  },
+  {
+    "service": "happyhorse",
+    "source": "https://github.com/AceDataCloud/HappyHorseDify/blob/ebcbfb0db4fa8261918055c2f286edd1f510dc7b/_assets/icon.jpg",
+    "local": "packages/happyhorse/icon.jpg"
+  },
+  {
+    "service": "gpt-image",
+    "source": "https://github.com/AceDataCloud/GPTImageDify/blob/910a7d746581a42dab5fe88c16b3134a44b2db1b/_assets/icon.png",
+    "local": "packages/gpt-image/icon.png"
+  },
+  {
+    "service": "nano-banana",
+    "source": "https://github.com/AceDataCloud/NanoBananaDify/blob/2703b3ee5cdc293751a15189ed24a0eb94dc3f43/_assets/icon.jpg",
+    "local": "packages/nano-banana/icon.jpg"
+  }
+]
