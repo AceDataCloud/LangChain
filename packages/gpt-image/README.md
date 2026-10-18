@@ -2,19 +2,19 @@
 
 ![gpt-image integration icon](https://raw.githubusercontent.com/AceDataCloud/GPTImageDify/910a7d746581a42dab5fe88c16b3134a44b2db1b/_assets/icon.png)
 
-Install `langchain-gpt-image-acedatacloud` to give a LangChain application typed **GPT Image by Ace Data Cloud** tools. This is an Ace-provided integration, not an official client of the service brand. It does not install the other four service modules. [中文](readme/README_zh_Hans.md) · [Privacy](https://github.com/AceDataCloud/LangChain/blob/codex/native-provider-service-toolkits/PRIVACY.md).
+Install `langchain-gpt-image-acedatacloud` to give a LangChain application typed **GPT Image by Ace Data Cloud** tools. This is an Ace-provided integration, not an official client of the service brand. It does not install the other four service modules. [中文](readme/README_zh_Hans.md) · [Privacy](https://github.com/AceDataCloud/LangChain/blob/main/PRIVACY.md).
 
 ## 1. Install
 
-Intended official registry entry: [PyPI `langchain-gpt-image-acedatacloud`](https://pypi.org/project/langchain-gpt-image-acedatacloud/). **PyPI `0.1.0rc1` candidate is published; [LangChain listing request](https://github.com/langchain-ai/docs/issues/6811) is OPEN and unapproved.** This prerelease is from the open implementation PR:
+Official registry destination: [PyPI `langchain-gpt-image-acedatacloud`](https://pypi.org/project/langchain-gpt-image-acedatacloud/). Source is merged on main. Version **0.1.0** is the stable release target; check [release status](../../RELEASE_STATUS.md) for actual publication before installing. LangChain official directory approval is separate.
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install langchain-gpt-image-acedatacloud==0.1.0rc1
+python -m pip install langchain-gpt-image-acedatacloud==0.1.0
 ```
 
-For current PR source preview: `git clone --branch codex/native-provider-service-toolkits https://github.com/AceDataCloud/LangChain.git`, `cd LangChain`, then `pip install -e packages/core -e packages/gpt-image`.
+For source installation: `git clone --branch main https://github.com/AceDataCloud/LangChain.git`, `cd LangChain`, then `pip install -e packages/core -e packages/gpt-image`.
 
 ## Get the application API Key
 

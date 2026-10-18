@@ -2,19 +2,19 @@
 
 ![nano-banana integration icon](https://raw.githubusercontent.com/AceDataCloud/NanoBananaDify/2703b3ee5cdc293751a15189ed24a0eb94dc3f43/_assets/icon.jpg)
 
-Install `langchain-nano-banana-acedatacloud` to give a LangChain application typed **Nano Banana by Ace Data Cloud** tools. This is an Ace-provided integration, not an official client of the service brand. It does not install the other four service modules. [中文](readme/README_zh_Hans.md) · [Privacy](https://github.com/AceDataCloud/LangChain/blob/codex/native-provider-service-toolkits/PRIVACY.md).
+Install `langchain-nano-banana-acedatacloud` to give a LangChain application typed **Nano Banana by Ace Data Cloud** tools. This is an Ace-provided integration, not an official client of the service brand. It does not install the other four service modules. [中文](readme/README_zh_Hans.md) · [Privacy](https://github.com/AceDataCloud/LangChain/blob/main/PRIVACY.md).
 
 ## 1. Install
 
-Intended official registry entry: [PyPI `langchain-nano-banana-acedatacloud`](https://pypi.org/project/langchain-nano-banana-acedatacloud/). **PyPI `0.1.0rc1` candidate is published; [LangChain listing request](https://github.com/langchain-ai/docs/issues/6812) is OPEN and unapproved.** This prerelease is from the open implementation PR:
+Official registry destination: [PyPI `langchain-nano-banana-acedatacloud`](https://pypi.org/project/langchain-nano-banana-acedatacloud/). Source is merged on main. Version **0.1.0** is the stable release target; check [release status](../../RELEASE_STATUS.md) for actual publication before installing. LangChain official directory approval is separate.
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install langchain-nano-banana-acedatacloud==0.1.0rc1
+python -m pip install langchain-nano-banana-acedatacloud==0.1.0
 ```
 
-For current PR source preview: `git clone --branch codex/native-provider-service-toolkits https://github.com/AceDataCloud/LangChain.git`, `cd LangChain`, then `pip install -e packages/core -e packages/nano-banana`.
+For source installation: `git clone --branch main https://github.com/AceDataCloud/LangChain.git`, `cd LangChain`, then `pip install -e packages/core -e packages/nano-banana`.
 
 ## Get the application API Key
 

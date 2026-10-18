@@ -2,9 +2,9 @@
 
 A named `ChatAceDataCloud` chat model and **five separately installable service toolkits**: Suno, Seedance, HappyHorse, GPT Image and Nano Banana **by Ace Data Cloud**. This project is maintained by Ace Data Cloud; it is not an official client of those service brands.
 
-[简体中文](https://github.com/AceDataCloud/LangChain/blob/codex/native-provider-service-toolkits/readme/README_zh_Hans.md) · [Privacy](https://github.com/AceDataCloud/LangChain/blob/codex/native-provider-service-toolkits/PRIVACY.md) · [Source](https://github.com/AceDataCloud/LangChain)
+[简体中文](https://github.com/AceDataCloud/LangChain/blob/main/readme/README_zh_Hans.md) · [Privacy](https://github.com/AceDataCloud/LangChain/blob/main/PRIVACY.md) · [Source](https://github.com/AceDataCloud/LangChain)
 
-**Release candidate / review:** four `0.1.0rc1` packages are on PyPI; Suno and Seedance uploads stopped at HTTP 429. See [current release status](https://github.com/AceDataCloud/LangChain/blob/codex/native-provider-service-toolkits/RELEASE_STATUS.md) for exact per-package availability. This is a prerelease from an open implementation PR, not a merged stable release. PyPI publication and official LangChain directory review are separate gates. There is no newly added graphical chat button. The class does not silently patch LangChain's built-in provider registry.
+**Stable release preparation:** the native integration source is merged on `main`. Version `0.1.0` is being prepared for all six packages; verify [release status](https://github.com/AceDataCloud/LangChain/blob/main/RELEASE_STATUS.md) for actual uploaded versions. Existing `0.1.0rc1` packages are historical prereleases. Package publication and official LangChain directory approval are separate gates. No new graphical chat button or upstream default-provider registration is claimed.
 
 ## Install only the integration you need
 
@@ -13,22 +13,22 @@ Use Python 3.10+ in a virtual environment. Each service package installs only it
 | Integration | Package / official registry destination | Guide |
 | --- | --- | --- |
 | Ace chat model | [`langchain-acedatacloud`](https://pypi.org/project/langchain-acedatacloud/) | [Chat model](#chat-without-a-custom-base-url) |
-| Suno by Ace Data Cloud | [`langchain-suno-acedatacloud`](https://pypi.org/project/langchain-suno-acedatacloud/) | [suno](https://github.com/AceDataCloud/LangChain/blob/codex/native-provider-service-toolkits/packages/suno/README.md) |
-| Seedance by Ace Data Cloud | [`langchain-seedance-acedatacloud`](https://pypi.org/project/langchain-seedance-acedatacloud/) | [seedance](https://github.com/AceDataCloud/LangChain/blob/codex/native-provider-service-toolkits/packages/seedance/README.md) |
-| HappyHorse by Ace Data Cloud | [`langchain-happyhorse-acedatacloud`](https://pypi.org/project/langchain-happyhorse-acedatacloud/) | [happyhorse](https://github.com/AceDataCloud/LangChain/blob/codex/native-provider-service-toolkits/packages/happyhorse/README.md) |
-| GPT Image by Ace Data Cloud | [`langchain-gpt-image-acedatacloud`](https://pypi.org/project/langchain-gpt-image-acedatacloud/) | [gpt-image](https://github.com/AceDataCloud/LangChain/blob/codex/native-provider-service-toolkits/packages/gpt-image/README.md) |
-| Nano Banana by Ace Data Cloud | [`langchain-nano-banana-acedatacloud`](https://pypi.org/project/langchain-nano-banana-acedatacloud/) | [nano-banana](https://github.com/AceDataCloud/LangChain/blob/codex/native-provider-service-toolkits/packages/nano-banana/README.md) |
+| Suno by Ace Data Cloud | [`langchain-suno-acedatacloud`](https://pypi.org/project/langchain-suno-acedatacloud/) | [suno](https://github.com/AceDataCloud/LangChain/blob/main/packages/suno/README.md) |
+| Seedance by Ace Data Cloud | [`langchain-seedance-acedatacloud`](https://pypi.org/project/langchain-seedance-acedatacloud/) | [seedance](https://github.com/AceDataCloud/LangChain/blob/main/packages/seedance/README.md) |
+| HappyHorse by Ace Data Cloud | [`langchain-happyhorse-acedatacloud`](https://pypi.org/project/langchain-happyhorse-acedatacloud/) | [happyhorse](https://github.com/AceDataCloud/LangChain/blob/main/packages/happyhorse/README.md) |
+| GPT Image by Ace Data Cloud | [`langchain-gpt-image-acedatacloud`](https://pypi.org/project/langchain-gpt-image-acedatacloud/) | [gpt-image](https://github.com/AceDataCloud/LangChain/blob/main/packages/gpt-image/README.md) |
+| Nano Banana by Ace Data Cloud | [`langchain-nano-banana-acedatacloud`](https://pypi.org/project/langchain-nano-banana-acedatacloud/) | [nano-banana](https://github.com/AceDataCloud/LangChain/blob/main/packages/nano-banana/README.md) |
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-# Published prerelease (explicit pin):
-python -m pip install langchain-acedatacloud==0.1.0rc1
-# Or a currently published service candidate:
-python -m pip install langchain-happyhorse-acedatacloud==0.1.0rc1
+# Stable version (after registry readback):
+python -m pip install langchain-acedatacloud==0.1.0
+# Or one service:
+python -m pip install langchain-happyhorse-acedatacloud==0.1.0
 ```
 
-For the current source preview, run `git clone --branch codex/native-provider-service-toolkits https://github.com/AceDataCloud/LangChain.git`, `cd LangChain`, then `pip install -e packages/core -e packages/suno`. Build artifacts from PR CI are offline-testable wheels, not proof of official listing.
+For source installation, run `git clone --branch main https://github.com/AceDataCloud/LangChain.git`, `cd LangChain`, then `pip install -e packages/core -e packages/suno`. Package artifacts are not proof of official listing.
 
 ## Get the application API Key
 
@@ -113,4 +113,4 @@ The repository is a single source for shared transport/task behavior. Packages h
 
 ## Official requests (2026-10-18)
 
-These are submissions, not approved entries: [ChatAceDataCloud](https://github.com/langchain-ai/docs/issues/6809), [HappyHorse by Ace Data Cloud](https://github.com/langchain-ai/docs/issues/6810), [GPT Image by Ace Data Cloud](https://github.com/langchain-ai/docs/issues/6811), [Nano Banana by Ace Data Cloud](https://github.com/langchain-ai/docs/issues/6812). The [native default-provider request](https://github.com/langchain-ai/langchain/issues/41291) was automatically closed because programmatic submission is disallowed; it needs the official web template. No API resubmission or issue-type workaround is used. Suno and Seedance will be eligible for listing after their PyPI upload succeeds; do not submit a false publication confirmation.
+These are submissions, not approved entries: [ChatAceDataCloud](https://github.com/langchain-ai/docs/issues/6809), [HappyHorse by Ace Data Cloud](https://github.com/langchain-ai/docs/issues/6810), [GPT Image by Ace Data Cloud](https://github.com/langchain-ai/docs/issues/6811), [Nano Banana by Ace Data Cloud](https://github.com/langchain-ai/docs/issues/6812). The [native default-provider request](https://github.com/langchain-ai/langchain/issues/41291) was automatically closed because programmatic submission is disallowed; it needs the official web template. No API resubmission or issue-type workaround is used. Suno and Seedance listing forms are submitted only after their public package installation is verified.
