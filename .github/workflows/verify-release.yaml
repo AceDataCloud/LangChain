@@ -1,0 +1,38 @@
+name: Verify published release
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Exact published version
+        required: true
+        default: "0.1.0"
+permissions:
+  contents: read
+jobs:
+  pypi-install:
+    runs-on: ubuntu-latest
+    env:
+      PACKAGE_VERSION: ${{ inputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install six public packages by exact version
+        run: |
+          python - <<'PY'
+          import os
+          import re
+          import subprocess
+          import sys
+          version = os.environ["PACKAGE_VERSION"]
+          if not re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+(?:rc[0-9]+)?", version):
+              raise SystemExit("Expected an exact release version")
+          names = ["langchain-acedatacloud", "langchain-suno-acedatacloud",
+                   "langchain-seedance-acedatacloud", "langchain-happyhorse-acedatacloud",
+                   "langchain-gpt-image-acedatacloud", "langchain-nano-banana-acedatacloud"]
+          subprocess.run([sys.executable, "-m", "pip", "install",
+                          *[name + "==" + version for name in names]], check=True)
+          PY
+      - name: Verify installed runtime without paid requests
+        run: python scripts/verify_published.py --version "$PACKAGE_VERSION" --all-services

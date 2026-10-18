@@ -2,21 +2,19 @@
 
 ![suno integration icon](https://raw.githubusercontent.com/AceDataCloud/SunoDify/0b96ef5afc74068428c65f895b4ee63c89361523/_assets/icon.jpg)
 
-Install `langchain-suno-acedatacloud` to give a LangChain application typed **Suno by Ace Data Cloud** tools. This is an Ace-provided integration, not an official client of the service brand. It does not install the other four service modules. [中文](readme/README_zh_Hans.md) · [Privacy](https://github.com/AceDataCloud/LangChain/blob/codex/native-provider-service-toolkits/PRIVACY.md).
+Install `langchain-suno-acedatacloud` to give a LangChain application typed **Suno by Ace Data Cloud** tools. This is an Ace-provided integration, not an official client of the service brand. It does not install the other four service modules. [中文](readme/README_zh_Hans.md) · [Privacy](https://github.com/AceDataCloud/LangChain/blob/main/PRIVACY.md).
 
 ## 1. Install
 
-Intended official registry entry: [PyPI `langchain-suno-acedatacloud`](https://pypi.org/project/langchain-suno-acedatacloud/). **PyPI publication stopped at HTTP 429; no official listing is claimed.** All candidate wheels are available in the [GitHub prerelease](https://github.com/AceDataCloud/LangChain/releases/tag/v0.1.0rc1). Use these already published candidate wheel URLs now; they install this service plus core only:
+Official registry destination: [PyPI `langchain-suno-acedatacloud`](https://pypi.org/project/langchain-suno-acedatacloud/). Source is merged on main. Version **0.1.0** is the stable release target; check [release status](../../RELEASE_STATUS.md) for actual publication before installing. LangChain official directory approval is separate.
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install \
-  "https://github.com/AceDataCloud/LangChain/releases/download/v0.1.0rc1/langchain_acedatacloud-0.1.0rc1-py3-none-any.whl" \
-  "https://github.com/AceDataCloud/LangChain/releases/download/v0.1.0rc1/langchain_suno_acedatacloud-0.1.0rc1-py3-none-any.whl"
+python -m pip install langchain-suno-acedatacloud==0.1.0
 ```
 
-For current PR source preview: `git clone --branch codex/native-provider-service-toolkits https://github.com/AceDataCloud/LangChain.git`, `cd LangChain`, then `pip install -e packages/core -e packages/suno`.
+For source installation: `git clone --branch main https://github.com/AceDataCloud/LangChain.git`, `cd LangChain`, then `pip install -e packages/core -e packages/suno`.
 
 ## Get the application API Key
 

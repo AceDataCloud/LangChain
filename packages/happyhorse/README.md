@@ -2,19 +2,19 @@
 
 ![happyhorse integration icon](https://raw.githubusercontent.com/AceDataCloud/HappyHorseDify/ebcbfb0db4fa8261918055c2f286edd1f510dc7b/_assets/icon.jpg)
 
-Install `langchain-happyhorse-acedatacloud` to give a LangChain application typed **HappyHorse by Ace Data Cloud** tools. This is an Ace-provided integration, not an official client of the service brand. It does not install the other four service modules. [中文](readme/README_zh_Hans.md) · [Privacy](https://github.com/AceDataCloud/LangChain/blob/codex/native-provider-service-toolkits/PRIVACY.md).
+Install `langchain-happyhorse-acedatacloud` to give a LangChain application typed **HappyHorse by Ace Data Cloud** tools. This is an Ace-provided integration, not an official client of the service brand. It does not install the other four service modules. [中文](readme/README_zh_Hans.md) · [Privacy](https://github.com/AceDataCloud/LangChain/blob/main/PRIVACY.md).
 
 ## 1. Install
 
-Intended official registry entry: [PyPI `langchain-happyhorse-acedatacloud`](https://pypi.org/project/langchain-happyhorse-acedatacloud/). **PyPI `0.1.0rc1` candidate is published; [LangChain listing request](https://github.com/langchain-ai/docs/issues/6810) is OPEN and unapproved.** This prerelease is from the open implementation PR:
+Official registry destination: [PyPI `langchain-happyhorse-acedatacloud`](https://pypi.org/project/langchain-happyhorse-acedatacloud/). Source is merged on main. Version **0.1.0** is the stable release target; check [release status](../../RELEASE_STATUS.md) for actual publication before installing. LangChain official directory approval is separate.
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install langchain-happyhorse-acedatacloud==0.1.0rc1
+python -m pip install langchain-happyhorse-acedatacloud==0.1.0
 ```
 
-For current PR source preview: `git clone --branch codex/native-provider-service-toolkits https://github.com/AceDataCloud/LangChain.git`, `cd LangChain`, then `pip install -e packages/core -e packages/happyhorse`.
+For source installation: `git clone --branch main https://github.com/AceDataCloud/LangChain.git`, `cd LangChain`, then `pip install -e packages/core -e packages/happyhorse`.
 
 ## Get the application API Key
 

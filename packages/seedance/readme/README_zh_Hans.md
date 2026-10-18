@@ -1,22 +1,20 @@
 # Seedance by Ace Data Cloud：LangChain中文接入
 
-这个独立工具包把Seedance的文本生成提交和同任务查询加入LangChain应用，由Ace Data Cloud提供，非服务品牌官方客户端。只安装本项服务及共用运行时，不带入其他四服务模块。[English](../README.md) · [发布状态](https://github.com/AceDataCloud/LangChain/blob/codex/native-provider-service-toolkits/RELEASE_STATUS.md)。
+这个独立工具包把Seedance的文本生成提交和同任务查询加入LangChain应用，由Ace Data Cloud提供，非服务品牌官方客户端。只安装本项服务及共用运行时，不带入其他四服务模块。[English](../README.md) · [发布状态](https://github.com/AceDataCloud/LangChain/blob/main/RELEASE_STATUS.md)。
 
 ## 1. 安装正确的候选包
 
-当前版本为 **0.1.0rc1候选版**，实现PR尚未合并，不是稳定main版本或官方精选。PyPI尚未发布：创建新项目返回429配额限制。下面安装已有GitHub候选wheel；不能称为PyPI或LangChain官方目录安装。 普通pip安装可能跳过候选版，已发包时必须显式锁定版本。
+源码已合入main，**0.1.0正式版**正在发布。执行下方安装命令前请查看[发布状态](../../../RELEASE_STATUS.md)，只有确实在PyPI存在的版本才可安装；官方目录是否收录另验。历史0.1.0rc1不冒充正式版。
 
 Python 3.10或更新版本，先创建独立环境：
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install \
-  "https://github.com/AceDataCloud/LangChain/releases/download/v0.1.0rc1/langchain_acedatacloud-0.1.0rc1-py3-none-any.whl" \
-  "https://github.com/AceDataCloud/LangChain/releases/download/v0.1.0rc1/langchain_seedance_acedatacloud-0.1.0rc1-py3-none-any.whl"
+python -m pip install langchain-seedance-acedatacloud==0.1.0
 ```
 
-Windows PowerShell用 `.venv\Scripts\Activate.ps1` 激活；安装命令可以放在同一行执行。以上仅安装包，不提交模型或媒体请求。GitHub候选安装文件可在[release文件列表](https://github.com/AceDataCloud/LangChain/releases/tag/v0.1.0rc1)核对。
+Windows PowerShell用 `.venv\Scripts\Activate.ps1` 激活；安装命令可以放在同一行执行。以上仅安装包，不提交模型或媒体请求。GitHub候选安装文件可在[release文件列表](https://github.com/AceDataCloud/LangChain/releases/tag/v0.1.0)核对。
 
 ## 2. 注册登录并获取应用Token
 

@@ -4,14 +4,14 @@ build-backend = "hatchling.build"
 
 [project]
 name = "langchain-happyhorse-acedatacloud"
-version = "0.1.0rc1"
+version = "0.1.0"
 description = "HappyHorse by Ace Data Cloud LangChain toolkit"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
 authors = [{name="Ace Data Cloud Dev", email="dev@acedata.cloud"}]
 keywords = ["happyhorse", "video", "langchain", "acedatacloud"]
-dependencies = ["langchain-acedatacloud==0.1.0rc1"]
+dependencies = ["langchain-acedatacloud==0.1.0"]
 classifiers = ["Programming Language :: Python :: 3", "Operating System :: OS Independent"]
 
 [project.urls]

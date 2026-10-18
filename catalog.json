@@ -5,7 +5,7 @@
     "class": "ChatAceDataCloud",
     "provider_id": "acedatacloud",
     "upstream_builtin": false,
-    "publication": "PyPI 0.1.0rc1 wheel published",
+    "publication": "0.1.0 prepared; historical0.1.0rc1 on PyPI",
     "official_listing": "https://github.com/langchain-ai/docs/issues/6809 (OPEN, not approved)"
   },
   "services": [
@@ -27,7 +27,7 @@
         "audio"
       ],
       "category": "music",
-      "publication": "not published: HTTP 429",
+      "publication": "0.1.0 prepared; confirm registry before installation",
       "official_listing": "not submitted: package missing on PyPI"
     },
     {
@@ -47,7 +47,7 @@
         "video"
       ],
       "category": "video",
-      "publication": "not published: HTTP 429",
+      "publication": "0.1.0 prepared; confirm registry before installation",
       "official_listing": "not submitted: package missing on PyPI"
     },
     {
@@ -67,7 +67,7 @@
         "video"
       ],
       "category": "video",
-      "publication": "PyPI 0.1.0rc1 wheel published",
+      "publication": "0.1.0 prepared; confirm registry before installation",
       "official_listing": "https://github.com/langchain-ai/docs/issues/6810 (OPEN, not approved)"
     },
     {
@@ -88,7 +88,7 @@
         "image"
       ],
       "category": "image",
-      "publication": "PyPI 0.1.0rc1 wheel published",
+      "publication": "0.1.0 prepared; confirm registry before installation",
       "official_listing": "https://github.com/langchain-ai/docs/issues/6811 (OPEN, not approved)"
     },
     {
@@ -109,8 +109,12 @@
         "image"
       ],
       "category": "image",
-      "publication": "PyPI 0.1.0rc1 wheel published",
+      "publication": "0.1.0 prepared; confirm registry before installation",
       "official_listing": "https://github.com/langchain-ai/docs/issues/6812 (OPEN, not approved)"
     }
-  ]
+  ],
+  "release": {
+    "version": "0.1.0",
+    "state": "prepared, pending package publication"
+  }
 }
