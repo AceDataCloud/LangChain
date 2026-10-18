@@ -4,7 +4,23 @@
 
 ## 安装与密钥
 
-Python 3.10+，先创建独立环境。正式包发布后可 `pip install langchain-acedatacloud`；只用 Suno 时安装 `langchain-suno-acedatacloud`，其他四项对应 `langchain-seedance-acedatacloud`、`langchain-happyhorse-acedatacloud`、`langchain-gpt-image-acedatacloud`、`langchain-nano-banana-acedatacloud`。候选代码可克隆仓库后 `pip install -e packages/core -e packages/suno`，不能把本地安装当官方收录。
+Python 3.10+，先创建独立环境。目前不是稳定版本：聊天核心、HappyHorse、GPT Image、Nano Banana 的 `0.1.0rc1` wheel 已公开PyPI；Suno、Seedance受新项目429配额限制，仅GitHub候选可装。所有官方目录申请仍待审核；请不要执行普通无版本pin命令来猜候选可用性。
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install langchain-acedatacloud==0.1.0rc1
+```
+
+| 服务 | 中文安装、Key填写和同ID查询教程 |
+| --- | --- |
+| Suno by Ace Data Cloud | [独立中文指南](../packages/suno/readme/README_zh_Hans.md) |
+| Seedance by Ace Data Cloud | [独立中文指南](../packages/seedance/readme/README_zh_Hans.md) |
+| HappyHorse by Ace Data Cloud | [独立中文指南](../packages/happyhorse/readme/README_zh_Hans.md) |
+| GPT Image by Ace Data Cloud | [独立中文指南](../packages/gpt-image/readme/README_zh_Hans.md) |
+| Nano Banana by Ace Data Cloud | [独立中文指南](../packages/nano-banana/readme/README_zh_Hans.md) |
+
+Suno/Seedance的独立指南提供固定GitHub release wheel命令，不是假PyPI入口。源码预览需 `git clone --branch codex/native-provider-service-toolkits https://github.com/AceDataCloud/LangChain.git`，`cd LangChain` 后再安装所需目录；默认main尚未包含实现。
 
 1. [注册／登录 Ace → 应用](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=langchain_zh_api_key)，没有通用应用时先初始化。
 2. 打开通用应用，复制 API Key，或“管理密钥 → 创建”一个单独命名的 LangChain Key。
@@ -14,7 +30,7 @@ Python 3.10+，先创建独立环境。正式包发布后可 `pip install langch
 
 ![创建独立命名密钥](../docs/assets/create-api-key-en.png)
 
-上图为真实 Ace 控制台历史截图，来源 SunoDify 固定版本，2026-10-18 复用，真实密钥已遮挡；不是 LangChain 界面图。只复制原始 Token，不含 Bearer、引号或遮挡字符。`platform-...` 管理 Token 不能用于生成。
+创建图中仍显示历史名称 `Dify tutorial`，实际请填写 `LangChain <服务名>`。上图为真实 Ace 控制台历史截图，来源 SunoDify 固定版本，2026-10-18 复用，真实密钥已遮挡；不是 LangChain 界面图。只复制原始 Token，不含 Bearer、引号或遮挡字符。`platform-...` 管理 Token 不能用于生成。
 
 ```bash
 export ACEDATACLOUD_API_TOKEN='你的应用 Key'

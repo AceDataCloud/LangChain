@@ -2,7 +2,7 @@
 
 ![happyhorse integration icon](https://raw.githubusercontent.com/AceDataCloud/HappyHorseDify/ebcbfb0db4fa8261918055c2f286edd1f510dc7b/_assets/icon.jpg)
 
-Install `langchain-happyhorse-acedatacloud` to give a LangChain application typed **HappyHorse by Ace Data Cloud** tools. This is an Ace-provided integration, not an official client of the service brand. It does not install the other four service modules. [中文](https://github.com/AceDataCloud/LangChain/blob/codex/native-provider-service-toolkits/readme/README_zh_Hans.md) · [Privacy](https://github.com/AceDataCloud/LangChain/blob/codex/native-provider-service-toolkits/PRIVACY.md).
+Install `langchain-happyhorse-acedatacloud` to give a LangChain application typed **HappyHorse by Ace Data Cloud** tools. This is an Ace-provided integration, not an official client of the service brand. It does not install the other four service modules. [中文](readme/README_zh_Hans.md) · [Privacy](https://github.com/AceDataCloud/LangChain/blob/codex/native-provider-service-toolkits/PRIVACY.md).
 
 ## 1. Install
 
@@ -14,7 +14,7 @@ source .venv/bin/activate
 python -m pip install langchain-happyhorse-acedatacloud==0.1.0rc1
 ```
 
-For current PR preview: clone `AceDataCloud/LangChain`, then `pip install -e packages/core -e packages/happyhorse`.
+For current PR source preview: `git clone --branch codex/native-provider-service-toolkits https://github.com/AceDataCloud/LangChain.git`, `cd LangChain`, then `pip install -e packages/core -e packages/happyhorse`.
 
 ## Get the application API Key
 
@@ -26,7 +26,7 @@ For current PR preview: clone `AceDataCloud/LangChain`, then `pip install -e pac
 
 ![Create a separately named key with optional restrictions](https://raw.githubusercontent.com/AceDataCloud/SunoDify/8d3d03570e73324220f111f7fe343da0792a8071/_assets/tutorial/create-api-key-en.png)
 
-These are real Ace console screenshots reused from [SunoDify](https://github.com/AceDataCloud/SunoDify/tree/8d3d03570e73324220f111f7fe343da0792a8071/_assets/tutorial), retrieved 2026-10-18; later console layouts may differ. They show credential setup, not a LangChain GUI. Real tokens are redacted.
+The credential name `Dify tutorial` in the historical create-key image is illustrative; name the actual key `LangChain HappyHorse`. These are real Ace console screenshots reused from [SunoDify](https://github.com/AceDataCloud/SunoDify/tree/8d3d03570e73324220f111f7fe343da0792a8071/_assets/tutorial), retrieved 2026-10-18; later console layouts may differ. They show credential setup, not a LangChain GUI. Real tokens are redacted.
 
 ```bash
 export ACEDATACLOUD_API_TOKEN='your application key'
@@ -56,7 +56,7 @@ After reviewing [current service prices](https://platform.acedata.cloud/models?u
 kit = HappyHorseToolkit(client=AceAPIClient(), include_generation=True)
 generate, retrieve = kit.get_tools()
 # This line submits one paid generation if you choose to run it:
-submitted = generate.invoke({"prompt": "A gentle sunrise scene"})
+submitted = generate.invoke({"prompt": "A white horse in warm sunrise light, slow camera push in."})
 task_id = submitted["task_id"]
 # Query the original ID; never call generate again just to wait:
 result = retrieve.invoke({"task_id": task_id})

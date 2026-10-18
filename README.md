@@ -22,13 +22,13 @@ Use Python 3.10+ in a virtual environment. Each service package installs only it
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-# After publication:
+# Published prerelease (explicit pin):
 python -m pip install langchain-acedatacloud==0.1.0rc1
 # Or a currently published service candidate:
 python -m pip install langchain-happyhorse-acedatacloud==0.1.0rc1
 ```
 
-For the current source preview, clone this repository, then run `pip install -e packages/core -e packages/suno`. Build artifacts from PR CI are offline-testable wheels, not proof of official listing.
+For the current source preview, run `git clone --branch codex/native-provider-service-toolkits https://github.com/AceDataCloud/LangChain.git`, `cd LangChain`, then `pip install -e packages/core -e packages/suno`. Build artifacts from PR CI are offline-testable wheels, not proof of official listing.
 
 ## Get the application API Key
 
@@ -40,7 +40,7 @@ For the current source preview, clone this repository, then run `pip install -e 
 
 ![Create a separately named key with optional restrictions](https://raw.githubusercontent.com/AceDataCloud/SunoDify/8d3d03570e73324220f111f7fe343da0792a8071/_assets/tutorial/create-api-key-en.png)
 
-These are real Ace console screenshots reused from [SunoDify](https://github.com/AceDataCloud/SunoDify/tree/8d3d03570e73324220f111f7fe343da0792a8071/_assets/tutorial), retrieved 2026-10-18; later console layouts may differ. They show credential setup, not a LangChain GUI. Real tokens are redacted.
+The historical create-key image says `Dify tutorial`; name the actual key `LangChain <service>`. These are real Ace console screenshots reused from [SunoDify](https://github.com/AceDataCloud/SunoDify/tree/8d3d03570e73324220f111f7fe343da0792a8071/_assets/tutorial), retrieved 2026-10-18; later console layouts may differ. They show credential setup, not a LangChain GUI. Real tokens are redacted.
 
 ```bash
 export ACEDATACLOUD_API_TOKEN='your application key'
