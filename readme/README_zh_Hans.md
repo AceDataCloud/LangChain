@@ -1,10 +1,10 @@
 # LangChain 中使用 Ace Data Cloud
 
-本仓库提供原生 `ChatAceDataCloud` 聊天类，以及 Suno、Seedance、HappyHorse、GPT Image、Nano Banana 五个可以分别安装的工具包。它们由 Ace Data Cloud 提供，不冒充服务品牌的官方客户端。源码已合入main；0.1.0正式包正在发布准备。PyPI发包、LangChain官方收录和默认Provider列表是独立阶段，实际包版本以发布状态为准。
+本仓库提供原生 `ChatAceDataCloud` 聊天类，以及 Suno、Seedance、HappyHorse、GPT Image、Nano Banana 五个可以分别安装的工具包。它们由 Ace Data Cloud 提供，不冒充服务品牌的官方客户端。源码已合入main；0.1.0已发布：六包可从GitHub安装，四包同时在PyPI，Suno/Seedance仍受新项目配额限制。PyPI发包、LangChain官方收录和默认Provider列表是独立阶段，实际包版本以发布状态为准。
 
 ## 安装与密钥
 
-Python 3.10+，先创建独立环境。下面命令以正式目标版本 `0.1.0` 锁定安装；执行前核对 [发布状态](../RELEASE_STATUS.md)，不把未完成上传当已发包。源码已合入main，官方目录申请仍待审。
+Python 3.10+，先创建独立环境。下面命令以正式版本 `0.1.0` 锁定安装；[发布状态](../RELEASE_STATUS.md)逐项列清PyPI/GitHub可用性。源码已合入main，官方目录申请仍待审。
 
 ```bash
 python3 -m venv .venv

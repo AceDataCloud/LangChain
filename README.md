@@ -4,7 +4,7 @@ A named `ChatAceDataCloud` chat model and **five separately installable service 
 
 [简体中文](readme/README_zh_Hans.md) · [Privacy](PRIVACY.md) · [Source](https://github.com/AceDataCloud/LangChain)
 
-**Stable release preparation:** the native integration source is merged on `main`. Version `0.1.0` is being prepared for all six packages; verify [release status](RELEASE_STATUS.md) for actual uploaded versions. Existing `0.1.0rc1` packages are historical prereleases. Package publication and official LangChain directory approval are separate gates. No new graphical chat button or upstream default-provider registration is claimed.
+**Stable 0.1.0:** source is merged on `main`, and all six wheel/source packages are available in the [GitHub release](https://github.com/AceDataCloud/LangChain/releases/tag/v0.1.0). Four projects are also on PyPI; Suno and Seedance are still blocked by the new-project HTTP429 quota. See [release status](RELEASE_STATUS.md) for per-channel facts. Official LangChain directory approval and default Provider selection are separate; no new graphical chat button is claimed.
 
 ## Install only the integration you need
 
@@ -22,7 +22,7 @@ Use Python 3.10+ in a virtual environment. Each service package installs only it
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-# Stable version (after registry readback):
+# Published stable version:
 python -m pip install langchain-acedatacloud==0.1.0
 # Or one service:
 python -m pip install langchain-happyhorse-acedatacloud==0.1.0

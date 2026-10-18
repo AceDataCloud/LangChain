@@ -2,9 +2,9 @@
 
 这个独立工具包把HappyHorse的文本生成提交和同任务查询加入LangChain应用，由Ace Data Cloud提供，非服务品牌官方客户端。只安装本项服务及共用运行时，不带入其他四服务模块。[English](../README.md) · [发布状态](https://github.com/AceDataCloud/LangChain/blob/main/RELEASE_STATUS.md)。
 
-## 1. 安装正确的候选包
+## 1. 安装正确的正式包
 
-源码已合入main，**0.1.0正式版**正在发布。执行下方安装命令前请查看[发布状态](../../../RELEASE_STATUS.md)，只有确实在PyPI存在的版本才可安装；官方目录是否收录另验。历史0.1.0rc1不冒充正式版。
+源码已合入main，**0.1.0正式版已在PyPI和GitHub发布**，下方命令锁定实际公开版本。[发布状态](../../../RELEASE_STATUS.md)逐项列出渠道；官方目录批准/精选另验。历史0.1.0rc1不当正式版。
 
 Python 3.10或更新版本，先创建独立环境：
 
@@ -14,7 +14,7 @@ source .venv/bin/activate
 python -m pip install langchain-happyhorse-acedatacloud==0.1.0
 ```
 
-Windows PowerShell用 `.venv\Scripts\Activate.ps1` 激活；安装命令可以放在同一行执行。以上仅安装包，不提交模型或媒体请求。GitHub候选安装文件可在[release文件列表](https://github.com/AceDataCloud/LangChain/releases/tag/v0.1.0)核对。
+Windows PowerShell用 `.venv\Scripts\Activate.ps1` 激活；安装命令可以放在同一行执行。以上仅安装包，不提交模型或媒体请求。GitHub正式安装文件可在[release文件列表](https://github.com/AceDataCloud/LangChain/releases/tag/v0.1.0)核对。
 
 ## 2. 注册登录并获取应用Token
 

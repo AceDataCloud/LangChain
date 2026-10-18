@@ -6,10 +6,31 @@ on:
         description: Exact published version
         required: true
         default: "0.1.0"
+      all_pypi:
+        description: Verify all six on PyPI only after they exist
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
   pypi-install:
+    runs-on: ubuntu-latest
+    env:
+      PACKAGE_VERSION: ${{ inputs.version }}
+      ALL_PYPI: ${{ inputs.all_pypi }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install public exact versions and import without API requests
+        run: |
+          if [ "$ALL_PYPI" = "true" ]; then
+            python scripts/verify_published.py --install pypi --version "$PACKAGE_VERSION" --all-services
+          else
+            python scripts/verify_published.py --install pypi --version "$PACKAGE_VERSION"
+          fi
+  github-install:
     runs-on: ubuntu-latest
     env:
       PACKAGE_VERSION: ${{ inputs.version }}
@@ -18,21 +39,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install six public packages by exact version
-        run: |
-          python - <<'PY'
-          import os
-          import re
-          import subprocess
-          import sys
-          version = os.environ["PACKAGE_VERSION"]
-          if not re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+(?:rc[0-9]+)?", version):
-              raise SystemExit("Expected an exact release version")
-          names = ["langchain-acedatacloud", "langchain-suno-acedatacloud",
-                   "langchain-seedance-acedatacloud", "langchain-happyhorse-acedatacloud",
-                   "langchain-gpt-image-acedatacloud", "langchain-nano-banana-acedatacloud"]
-          subprocess.run([sys.executable, "-m", "pip", "install",
-                          *[name + "==" + version for name in names]], check=True)
-          PY
-      - name: Verify installed runtime without paid requests
-        run: python scripts/verify_published.py --version "$PACKAGE_VERSION" --all-services
+      - name: Install all six official release wheels without API requests
+        run: python scripts/verify_published.py --install github --version "$PACKAGE_VERSION" --all-services

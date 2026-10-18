@@ -6,7 +6,7 @@ Install `langchain-happyhorse-acedatacloud` to give a LangChain application type
 
 ## 1. Install
 
-Official registry destination: [PyPI `langchain-happyhorse-acedatacloud`](https://pypi.org/project/langchain-happyhorse-acedatacloud/). Source is merged on main. Version **0.1.0** is the stable release target; check [release status](../../RELEASE_STATUS.md) for actual publication before installing. LangChain official directory approval is separate.
+Official registry destination: [PyPI `langchain-happyhorse-acedatacloud`](https://pypi.org/project/langchain-happyhorse-acedatacloud/). Source is merged on main. Stable **0.1.0** is published; check [release status](../../RELEASE_STATUS.md) for the exact distribution channel. LangChain official directory approval is separate.
 
 ```bash
 python3 -m venv .venv
