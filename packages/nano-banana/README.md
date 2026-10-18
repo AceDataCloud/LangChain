@@ -6,7 +6,7 @@ Install `langchain-nano-banana-acedatacloud` to give a LangChain application typ
 
 ## 1. Install
 
-Official registry destination: [PyPI `langchain-nano-banana-acedatacloud`](https://pypi.org/project/langchain-nano-banana-acedatacloud/). Source is merged on main. Version **0.1.0** is the stable release target; check [release status](../../RELEASE_STATUS.md) for actual publication before installing. LangChain official directory approval is separate.
+Official registry destination: [PyPI `langchain-nano-banana-acedatacloud`](https://pypi.org/project/langchain-nano-banana-acedatacloud/). Source is merged on main. Stable **0.1.0** is published; check [release status](../../RELEASE_STATUS.md) for the exact distribution channel. LangChain official directory approval is separate.
 
 ```bash
 python3 -m venv .venv

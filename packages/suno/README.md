@@ -6,12 +6,14 @@ Install `langchain-suno-acedatacloud` to give a LangChain application typed **Su
 
 ## 1. Install
 
-Official registry destination: [PyPI `langchain-suno-acedatacloud`](https://pypi.org/project/langchain-suno-acedatacloud/). Source is merged on main. Version **0.1.0** is the stable release target; check [release status](../../RELEASE_STATUS.md) for actual publication before installing. LangChain official directory approval is separate.
+Official registry destination: [PyPI `langchain-suno-acedatacloud`](https://pypi.org/project/langchain-suno-acedatacloud/). Source is merged on main. Stable **0.1.0** is on GitHub; PyPI creation is still blocked by HTTP429. Use the two official release wheel URLs below; this is not a PyPI listing. LangChain official directory approval is separate.
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install langchain-suno-acedatacloud==0.1.0
+python -m pip install \
+  "https://github.com/AceDataCloud/LangChain/releases/download/v0.1.0/langchain_acedatacloud-0.1.0-py3-none-any.whl" \
+  "https://github.com/AceDataCloud/LangChain/releases/download/v0.1.0/langchain_suno_acedatacloud-0.1.0-py3-none-any.whl"
 ```
 
 For source installation: `git clone --branch main https://github.com/AceDataCloud/LangChain.git`, `cd LangChain`, then `pip install -e packages/core -e packages/suno`.
