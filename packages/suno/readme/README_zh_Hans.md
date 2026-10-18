@@ -60,7 +60,7 @@ print([tool.name for tool in kit.get_tools()])
 ```python
 kit = SunoToolkit(client=AceAPIClient(), include_generation=True)
 generate, retrieve = kit.get_tools()
-submitted = generate.invoke({"prompt": 'A short gentle instrumental piano melody for sunrise.'})
+submitted = generate.invoke({"prompt": "A short gentle instrumental piano melody for sunrise."})
 task_id = submitted["task_id"]
 result = retrieve.invoke({"task_id": task_id})
 print(result["status"], result["terminal"], result["media_urls"])

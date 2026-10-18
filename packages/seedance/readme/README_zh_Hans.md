@@ -60,7 +60,7 @@ print([tool.name for tool in kit.get_tools()])
 ```python
 kit = SeedanceToolkit(client=AceAPIClient(), include_generation=True)
 generate, retrieve = kit.get_tools()
-submitted = generate.invoke({"prompt": 'A quiet sunrise over a lake, slow camera push in.'})
+submitted = generate.invoke({"prompt": "A quiet sunrise over a lake, slow camera push in."})
 task_id = submitted["task_id"]
 result = retrieve.invoke({"task_id": task_id})
 print(result["status"], result["terminal"], result["media_urls"])
