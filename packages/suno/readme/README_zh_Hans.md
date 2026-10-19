@@ -4,16 +4,14 @@
 
 ## 1. 安装正确的正式包
 
-源码已合入main，**0.1.0正式版已在GitHub发布**；PyPI新项目创建仍受429限制，使用下方两个固定release wheel URL，不冒充PyPI发布。[发布状态](../../../RELEASE_STATUS.md)逐项列出渠道；官方目录批准/精选另验。历史0.1.0rc1不当正式版。
+源码已合入main，**0.1.0正式版wheel和源码包已在PyPI／GitHub公开**，下方普通pip命令可直接安装。[官方目录申请#6877](https://github.com/langchain-ai/docs/issues/6877)刚提交待审核，不能当官方收录。[干净runner安装验收](https://github.com/AceDataCloud/LangChain/actions/runs/39321983859)已成功；官方默认Provider/精选另验。
 
 Python 3.10或更新版本，先创建独立环境：
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install \
-  "https://github.com/AceDataCloud/LangChain/releases/download/v0.1.0/langchain_acedatacloud-0.1.0-py3-none-any.whl" \
-  "https://github.com/AceDataCloud/LangChain/releases/download/v0.1.0/langchain_suno_acedatacloud-0.1.0-py3-none-any.whl"
+python -m pip install langchain-suno-acedatacloud==0.1.0
 ```
 
 Windows PowerShell用 `.venv\Scripts\Activate.ps1` 激活；安装命令可以放在同一行执行。以上仅安装包，不提交模型或媒体请求。GitHub正式安装文件可在[release文件列表](https://github.com/AceDataCloud/LangChain/releases/tag/v0.1.0)核对。

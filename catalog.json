@@ -5,8 +5,8 @@
     "class": "ChatAceDataCloud",
     "provider_id": "acedatacloud",
     "upstream_builtin": false,
-    "publication": "PyPI/GitHub0.1.0 stable",
-    "official_listing": "https://github.com/langchain-ai/docs/issues/6809 (OPEN, not approved)"
+    "publication": "PyPI/GitHub0.1.0stable",
+    "official_listing": "https://github.com/langchain-ai/docs/pull/6839 (MERGED; live chat directory verified)"
   },
   "services": [
     {
@@ -27,8 +27,8 @@
         "audio"
       ],
       "category": "music",
-      "publication": "GitHub0.1.0 stable; PyPI new-project429",
-      "official_listing": "not submitted: package missing on PyPI"
+      "publication": "PyPI/GitHub0.1.0stable; fresh install verified",
+      "official_listing": "https://github.com/langchain-ai/docs/issues/6877 (OPEN; pending)"
     },
     {
       "slug": "seedance",
@@ -47,8 +47,8 @@
         "video"
       ],
       "category": "video",
-      "publication": "GitHub0.1.0 stable; PyPI new-project429",
-      "official_listing": "not submitted: package missing on PyPI"
+      "publication": "PyPI/GitHub0.1.0stable; fresh install verified",
+      "official_listing": "https://github.com/langchain-ai/docs/issues/6878 (OPEN; pending)"
     },
     {
       "slug": "happyhorse",
@@ -67,8 +67,8 @@
         "video"
       ],
       "category": "video",
-      "publication": "PyPI/GitHub0.1.0 stable",
-      "official_listing": "https://github.com/langchain-ai/docs/issues/6810 (OPEN, not approved)"
+      "publication": "PyPI/GitHub0.1.0stable; fresh install verified",
+      "official_listing": "https://github.com/langchain-ai/docs/pull/6840 (MERGED; live tools directory verified)"
     },
     {
       "slug": "gpt-image",
@@ -88,8 +88,8 @@
         "image"
       ],
       "category": "image",
-      "publication": "PyPI/GitHub0.1.0 stable",
-      "official_listing": "https://github.com/langchain-ai/docs/issues/6811 (OPEN, not approved)"
+      "publication": "PyPI/GitHub0.1.0stable; fresh install verified",
+      "official_listing": "https://github.com/langchain-ai/docs/pull/6836 (MERGED; live tools directory verified)"
     },
     {
       "slug": "nano-banana",
@@ -109,12 +109,12 @@
         "image"
       ],
       "category": "image",
-      "publication": "PyPI/GitHub0.1.0 stable",
-      "official_listing": "https://github.com/langchain-ai/docs/issues/6812 (OPEN, not approved)"
+      "publication": "PyPI/GitHub0.1.0stable; fresh install verified",
+      "official_listing": "https://github.com/langchain-ai/docs/pull/6828 (MERGED; live tools directory verified)"
     }
   ],
   "release": {
     "version": "0.1.0",
-    "state": "stable GitHub all6; PyPI4 published"
+    "state": "all6 stable PyPI/GitHub; fresh install verified"
   }
 }
