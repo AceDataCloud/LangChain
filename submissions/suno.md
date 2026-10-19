@@ -1,5 +1,5 @@
 ### Display or class name
-Suno by Ace Data Cloud
+SunoToolkit
 
 ### Language
 Python
@@ -13,7 +13,7 @@ langchain-suno-acedatacloud
 ### npm package name
 
 ### Docs URL
-https://github.com/AceDataCloud/LangChain/tree/codex/native-provider-service-toolkits/packages/suno
+https://github.com/AceDataCloud/LangChain/tree/main/packages/suno
 
 ### Source repository
 AceDataCloud/LangChain
@@ -24,6 +24,7 @@ Music generation submission and same-ID task retrieval tools provided by Ace Dat
 ### Capability flags (optional)
 
 ### Confirmations
-- [ ] The package is already published on PyPI and/or npm.
+- [x] The package is already published on PyPI and/or npm.
 
-Do not submit until the registry package and main docs are publicly installable. AI-assisted contribution, manually reviewed and offline tested; no new paid live call claimed.
+
+Submitted once after public pip installation: https://github.com/langchain-ai/docs/issues/6877 . Version0.1.0, pending review. Do not create duplicate submissions.

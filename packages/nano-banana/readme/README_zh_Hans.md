@@ -4,7 +4,7 @@
 
 ## 1. 安装正确的正式包
 
-源码已合入main，**0.1.0正式版已在PyPI和GitHub发布**，下方命令锁定实际公开版本。[发布状态](../../../RELEASE_STATUS.md)逐项列出渠道；官方目录批准/精选另验。历史0.1.0rc1不当正式版。
+源码已合入main，**0.1.0正式版wheel和源码包已在PyPI／GitHub公开**，下方普通pip命令可直接安装。[官方目录PR#6828](https://github.com/langchain-ai/docs/pull/6828)已合并，[公开工具目录](https://docs.langchain.com/oss/python/integrations/tools)已能找到本Toolkit。[干净runner安装验收](https://github.com/AceDataCloud/LangChain/actions/runs/39321983859)已成功；官方默认Provider/精选另验。
 
 Python 3.10或更新版本，先创建独立环境：
 

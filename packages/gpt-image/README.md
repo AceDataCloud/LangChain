@@ -6,7 +6,7 @@ Install `langchain-gpt-image-acedatacloud` to give a LangChain application typed
 
 ## 1. Install
 
-Official registry destination: [PyPI `langchain-gpt-image-acedatacloud`](https://pypi.org/project/langchain-gpt-image-acedatacloud/). Source is merged on main. Stable **0.1.0** is published; check [release status](../../RELEASE_STATUS.md) for the exact distribution channel. LangChain official directory approval is separate.
+Install [PyPI `langchain-gpt-image-acedatacloud==0.1.0`](https://pypi.org/project/langchain-gpt-image-acedatacloud/0.1.0/). Stable wheel and source archive are public. Official LangChain [listing PR#6836](https://github.com/langchain-ai/docs/pull/6836) is merged and the [public tools directory](https://docs.langchain.com/oss/python/integrations/tools) lists this Toolkit. Fresh ordinary pip installation and query-tool loading are [verified](https://github.com/AceDataCloud/LangChain/actions/runs/39321983859).
 
 ```bash
 python3 -m venv .venv

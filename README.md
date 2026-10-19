@@ -4,7 +4,7 @@ A named `ChatAceDataCloud` chat model and **five separately installable service 
 
 [简体中文](readme/README_zh_Hans.md) · [Privacy](PRIVACY.md) · [Source](https://github.com/AceDataCloud/LangChain)
 
-**Stable 0.1.0:** source is merged on `main`, and all six wheel/source packages are available in the [GitHub release](https://github.com/AceDataCloud/LangChain/releases/tag/v0.1.0). Four projects are also on PyPI; Suno and Seedance are still blocked by the new-project HTTP429 quota. See [release status](RELEASE_STATUS.md) for per-channel facts. Official LangChain directory approval and default Provider selection are separate; no new graphical chat button is claimed.
+**Stable 0.1.0:** all six independent distributions are published on PyPI and in the [GitHub release](https://github.com/AceDataCloud/LangChain/releases/tag/v0.1.0). Clean ordinary pip installation and native query-tool loading passed for all six on 2026-10-20. LangChain's public chat/tools directory now lists ChatAceDataCloud, HappyHorseToolkit, GPTImageToolkit and NanoBananaToolkit. Suno and Seedance listing requests are submitted, not yet approved. Official listing is separate from default `init_chat_model` Provider selection, which is not implemented upstream. See [release status](https://github.com/AceDataCloud/LangChain/blob/main/RELEASE_STATUS.md) for evidence. No graphical chat button or new paid-live result is claimed.
 
 ## Install only the integration you need
 
@@ -111,6 +111,8 @@ python -m twine check dist/*
 The repository is a single source for shared transport/task behavior. Packages have independent identities, service names, schemas and listing materials. The [LangChain integration process](https://docs.langchain.com/oss/python/contributing/integrations-langchain) requires published packages and a listing issue; see `submissions/` for reviewable forms. No unsolicited manual listing PR or promotional message is sent.
 
 
-## Official requests (2026-10-18)
+## Official discovery (2026-10-20)
 
-These are submissions, not approved entries: [ChatAceDataCloud](https://github.com/langchain-ai/docs/issues/6809), [HappyHorse by Ace Data Cloud](https://github.com/langchain-ai/docs/issues/6810), [GPT Image by Ace Data Cloud](https://github.com/langchain-ai/docs/issues/6811), [Nano Banana by Ace Data Cloud](https://github.com/langchain-ai/docs/issues/6812). The [native default-provider request](https://github.com/langchain-ai/langchain/issues/41291) was automatically closed because programmatic submission is disallowed; it needs the official web template. No API resubmission or issue-type workaround is used. Suno and Seedance listing forms are submitted only after their public package installation is verified.
+LangChain's [chat directory](https://docs.langchain.com/oss/python/integrations/chat) lists ChatAceDataCloud, and its [tools directory](https://docs.langchain.com/oss/python/integrations/tools) lists HappyHorseToolkit, GPTImageToolkit and NanoBananaToolkit. The official listing PRs are merged: [chat #6839](https://github.com/langchain-ai/docs/pull/6839), [HappyHorse #6840](https://github.com/langchain-ai/docs/pull/6840), [GPT Image #6836](https://github.com/langchain-ai/docs/pull/6836), [Nano Banana #6828](https://github.com/langchain-ai/docs/pull/6828).
+
+New independent packages are published and install-verified, with listing requests pending: [Suno #6877](https://github.com/langchain-ai/docs/issues/6877), [Seedance #6878](https://github.com/langchain-ai/docs/issues/6878). These requests are not yet official listings. Default Provider request [#41291](https://github.com/langchain-ai/langchain/issues/41291) remains a separate official-web-template step; do not bypass it through an API or claim factory registration from a docs listing.

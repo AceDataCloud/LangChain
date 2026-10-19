@@ -1,6 +1,6 @@
 # LangChain 中使用 Ace Data Cloud
 
-本仓库提供原生 `ChatAceDataCloud` 聊天类，以及 Suno、Seedance、HappyHorse、GPT Image、Nano Banana 五个可以分别安装的工具包。它们由 Ace Data Cloud 提供，不冒充服务品牌的官方客户端。源码已合入main；0.1.0已发布：六包可从GitHub安装，四包同时在PyPI，Suno/Seedance仍受新项目配额限制。PyPI发包、LangChain官方收录和默认Provider列表是独立阶段，实际包版本以发布状态为准。
+本仓库提供原生 `ChatAceDataCloud` 聊天类，以及 Suno、Seedance、HappyHorse、GPT Image、Nano Banana 五个可以分别安装的工具包。它们由 Ace Data Cloud 提供，不冒充服务品牌的官方客户端。源码已合入main；0.1.0六包已全部在PyPI与GitHub发布并完成干净安装；聊天核心、HappyHorse、GPT Image、Nano Banana已有官方目录条目，Suno/Seedance刚提交待审核。PyPI发包、LangChain官方收录和默认Provider列表是独立阶段，实际包版本以发布状态为准。
 
 ## 安装与密钥
 
@@ -20,7 +20,7 @@ python -m pip install langchain-acedatacloud==0.1.0
 | GPT Image by Ace Data Cloud | [独立中文指南](../packages/gpt-image/readme/README_zh_Hans.md) |
 | Nano Banana by Ace Data Cloud | [独立中文指南](../packages/nano-banana/readme/README_zh_Hans.md) |
 
-各独立指南说明当前包状态与备用下载路径。源码安装可用 `git clone --branch main https://github.com/AceDataCloud/LangChain.git`，`cd LangChain` 后再安装所需目录；main已包含实现。
+各独立指南提供普通pip精确版本命令及当前官方目录状态。源码安装可用 `git clone --branch main https://github.com/AceDataCloud/LangChain.git`，`cd LangChain` 后再安装所需目录；main已包含实现。
 
 1. [注册／登录 Ace → 应用](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=langchain_zh_api_key)，没有通用应用时先初始化。
 2. 打开通用应用，复制 API Key，或“管理密钥 → 创建”一个单独命名的 LangChain Key。
