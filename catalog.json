@@ -111,6 +111,27 @@
       "category": "image",
       "publication": "PyPI/GitHub0.1.0stable; fresh install verified",
       "official_listing": "https://github.com/langchain-ai/docs/pull/6828 (MERGED; live tools directory verified)"
+    },
+    {
+      "slug": "acemusic",
+      "display_name": "ACE Music by Ace Data Cloud",
+      "package": "langchain-acemusic-acedatacloud",
+      "module": "langchain_acemusic_acedatacloud",
+      "toolkit": "AceMusicToolkit",
+      "tool_names": [
+        "acemusic_generate_audio",
+        "acemusic_retrieve_task"
+      ],
+      "endpoint": "/acemusic/audios",
+      "task_endpoint": "/acemusic/tasks",
+      "keywords": [
+        "acemusic",
+        "music",
+        "audio"
+      ],
+      "category": "music",
+      "publication": "source",
+      "official_listing": null
     }
   ],
   "release": {

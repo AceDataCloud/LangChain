@@ -13,7 +13,7 @@ for path in sorted((ROOT / "packages").glob("*/pyproject.toml")):
     assert (path.parent / data["readme"]).is_file()
     assert (path.parent / "LICENSE").is_file()
     names.append(data["name"])
-assert len(names) == len(set(names)) == 6
+assert len(names) == len(set(names)) == 1 + len(catalog["services"])
 assert all(item["package"] in names for item in catalog["services"])
-assert len({item["endpoint"] for item in catalog["services"]}) == 5
-print("Six unique distributions; five distinct service contracts")
+assert len({item["endpoint"] for item in catalog["services"]}) == len(catalog["services"])
+print(f"Verified {len(names)} distributions and {len(catalog['services'])} distinct services")

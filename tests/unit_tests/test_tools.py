@@ -9,6 +9,7 @@ from langchain_acedatacloud.tools import task_result
 from pydantic import ValidationError
 
 SERVICES = [
+    ("acemusic", "AceMusic", "/acemusic/audios", "/acemusic/tasks"),
     ("suno", "Suno", "/suno/audios", "/suno/tasks"),
     ("seedance", "Seedance", "/seedance/videos", "/seedance/tasks"),
     ("happyhorse", "HappyHorse", "/happyhorse/videos", "/happyhorse/tasks"),
@@ -162,3 +163,33 @@ def test_async_generation_submits_once(slug, cls, endpoint, query):
     result = asyncio.run(generate.ainvoke({"prompt": "sunrise"}))
     assert result["task_id"] == "owned-async" and result["terminal"] is False
     assert len(seen) == 1 and seen[0][0] == endpoint and seen[0][1]["async"] is True
+
+
+@pytest.mark.parametrize(
+    "state,finished,successful,expected",
+    [
+        ("processing", False, False, "pending"),
+        ("partial_failed", True, False, "failed"),
+        ("succeeded", True, True, "succeeded"),
+    ],
+)
+def test_ace_music_uses_group_status_even_without_finished_at(
+    state, finished, successful, expected
+):
+    def handler(request):
+        return httpx.Response(
+            200,
+            json={
+                "id": "task",
+                "status": state,
+                "finished": finished,
+                "successful": successful,
+                "response": {"data": [{"audio_url": "https://example.org/one.mp3"}]},
+            },
+        )
+
+    retrieve = toolkit("acemusic", "AceMusic", handler).get_tools()[-1]
+    record = retrieve.invoke({"task_id": "task"})
+    assert record["status"] == expected
+    assert bool(record["media_urls"]) == (expected == "succeeded")
+    assert record["raw"]["status"] == state
