@@ -183,22 +183,10 @@
       ],
       "fields": {
         "prompt": {
+          "rank": 10,
           "type": "string",
-          "enum": [
-            "A cute baby sea otter",
-            "A wooden bookshelf consisting of three shelves: on the top shelf one book, the second shelf three books, and the bottom shelf seven books.",
-            "Cinematic minimal portrait of a solitary man standing in an intense orange-to-red gradient environment, strong silhouette lighting, deep shadow contrast, reflective glossy floor, symmetrical composition.",
-            "Symmetrical design featuring two elegant blue peacocks with detailed feather patterns, surrounded by blue floral elements, intricate vintage botanical ornament, soft beige background, decorative art illustration.",
-            "Avant-garde sports fashion advertisement, oversized basketball posed like a monumental sculpture, female athlete reclining across the ball's curved surface, giant word 'ELEVATE' in bold typography behind, burnt orange studio backdrop, glossy reflective floor.",
-            "High-fashion surrealist poster for Rolex. Deep emerald green minimalist studio with polished reflective floor. A massive Rolex watch standing upright like a monument; a male model in tailored dark green suit leans casually against the watch face, wearing a matching Rolex.",
-            "Ultra-realistic product photography of a rich strawberry soft-serve ice cream in a crispy waffle cone, clean modern premium aesthetic, soft serve vibrant natural pink, sculpted swirl with curled peak, lightly topped with strawberry dust.",
-            "Hyper-realistic UI/UX mockup on a slim modern laptop on a minimal wooden desk with soft natural daylight; clean SaaS dashboard with elegant typography, glassmorphism cards, smooth gradients, subtle drop shadows, charts, sidebar navigation, macOS-style window frame.",
-            "9:16 vertical Korean idol portrait photoshoot, 3x3 grid (nine frames), same person in all images, consistent facial features and styling, soft black mist filter effect, lowered contrast, blooming highlights, subtle glow around light sources.",
-            "Mobile phone photo, old CCD camera aesthetic, harsh flash, grainy, dim messy indoor lighting, candid snapshot feeling, slight motion blur.",
-            "Create a science fiction movie poster.",
-            "以中国连环画（小人书）的风格帮我绘制大闹天宫",
-            "新中式水墨山水海报，竖版9:16构图，东方极简美学风格，大面积留白，主题是春岚一叶红"
-          ]
+          "example": "A cute baby sea otter",
+          "description": "Text description of the required image. The GPT image model supports up to 32,000 characters, `dall-e-2` supports up to 1,000 characters, and `dall-e-3` supports up to 4,000 characters. A selection of example prompts is provided in the dropdown list (source: [EvoLinkAI/awesome-gpt-image-2-prompts](https://github.com/EvoLinkAI/awesome-gpt-image-2-prompts), Apache-2.0 license); you can also enter your own."
         },
         "model": {
           "enum": [
@@ -208,8 +196,10 @@
             "gpt-image-1.5",
             "gpt-image-2",
             "gpt-image-2.5-flare",
+            "gpt-image-2.5-flare:reverse",
             "gpt-image-2.5-flare:official",
             "gpt-image-2.5-sunburst",
+            "gpt-image-2.5-sunburst:reverse",
             "gpt-image-2.5-sunburst:official",
             "gpt-image-2:reverse",
             "gpt-image-2:official",
@@ -217,20 +207,26 @@
             "nano-banana-2-lite",
             "nano-banana-2",
             "nano-banana-2.1",
-            "nano-banana-pro"
+            "nano-banana-pro",
+            "gpt-image-2.6-flare",
+            "gpt-image-2.6-flare:reverse",
+            "gpt-image-2.6-flare:official",
+            "gpt-image-2.6-sunburst",
+            "gpt-image-2.6-sunburst:reverse",
+            "gpt-image-2.6-sunburst:official"
           ],
-          "type": "string"
-        },
-        "n": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 10,
-          "default": 1
+          "rank": 1,
+          "type": "string",
+          "description": "Models for image generation. Supports OpenAI\u2019s `dall-e-2`, `dall-e-3`, `gpt-image-1` / `gpt-image-1.5` / `gpt-image-2` / `gpt-image-2.5-flare` / `gpt-image-2.5-sunburst` series, as well as Google\u2019s `nano-banana` / `nano-banana-2-lite` / `nano-banana-2` / `nano-banana-2.1` / `nano-banana-pro`. The `size`, `quality`, `style`, `background`, `output_format`, `moderation`, and `response_format` parameters supported by different models vary; see the description of each field for details. `gpt-image-2` provides `gpt-image-2:official` (official channel, stable and compliant, billed based on the actual Token usage of text input and image output) and `gpt-image-2:reverse` (equivalent to the default `gpt-image-2`, with better cost performance); `gpt-image-2.5-flare` and `gpt-image-2.5-sunburst` also respectively provide same-named `:official` variants, billed based on actual Token usage. GPT Image 2.6 supports `gpt-image-2.6-flare`, `gpt-image-2.6-sunburst`, and their respective `:reverse` and `:official` variants; the standard version and `:reverse` cost 0.22 Credits/image, while `:official` is the same as 2.5 and billed based on actual Token usage."
         },
         "size": {
+          "rank": 30,
           "type": "string",
           "default": "auto",
-          "pattern": "^(auto|\\d+x\\d+)$"
+          "example": "1024x1024",
+          "pattern": "^(auto|\\d+x\\d+)$",
+          "nullable": true,
+          "description": "The size of the generated image, in the format `widthxheight`, or fill in `auto` to select the canvas based on the prompt semantics. **The GPT Image 2 series (`gpt-image-2`, `gpt-image-2.5-flare`, `gpt-image-2.5-sunburst`, `gpt-image-2.6-flare`, `gpt-image-2.6-sunburst`)** accepts any `WIDTHxHEIGHT` value that conforms to the format, including 1K presets (`1024x1024`, `1536x1024`, `1024x1536`, `1792x1024`, `1024x1792`), 2K presets (`2048x2048`, `2048x1536`, `1536x2048`, `2048x1152`, `1152x2048`), 4K presets (`2880x2880`, `3264x2448`, `2448x3264`, `3840x2160`, `2160x3840`), as well as any custom size; the default model and `:reverse` are billed per image, while the size and quality of `:official` affect Token usage and are billed based on actual usage. Size limits: custom sizes must be multiples of 16, the longer side must not exceed 3840, the total pixel count must be 655,360\u20138,294,400, and the aspect ratio must not exceed 3:1. `dall-e-2` supports: `256x256`, `512x512`, `1024x1024`. `dall-e-3` supports: `1024x1024`, `1792x1024`, `1024x1792`. When `auto` is explicitly passed, the platform will determine in a continuous aspect-ratio space in order based on explicit pixels or ratios, named standards (paper / print materials / platform placements / advertisements / devices / photography / film), medium conventions, and composition. In addition to common ratios, non-preset ratios such as `1.91:1`, `1.85:1`, `2.39:1`, and ISO paper `1:\u221a2` can also be retained; the result will be normalized to multiples of 16 and the pixel budget supported by the service. When automatic determination is unavailable, it falls back to the model's default canvas. Omitting the `size` field directly uses the model's default canvas. If there are strict pixel requirements, please directly pass `WIDTHxHEIGHT`. Static image generation and editing in GPT Image 2.6 support the above 4K pixel presets; please pass specific pixels such as `size: \"3840x2160\"`, and do not use `4K` as a size value. When GIF omits size or passes auto, it uses the `512x512` preview preset; it is recommended to use `size: \"512x512\"`, `frame_count: 9`, `frame_duration_ms: 200`. GIF size and frame count have independent limits and cannot directly use static 4K specifications; some models may adjust the actual GIF size."
         },
         "quality": {
           "enum": [
@@ -238,13 +234,29 @@
             "high",
             "medium",
             "low",
+            "xhigh",
+            "max",
             "hd",
             "standard"
           ],
+          "rank": 40,
           "type": "string",
-          "default": "auto"
+          "default": "auto",
+          "example": "auto",
+          "description": "Image quality. GPT Image models support `auto` (default), `low`, `medium`, `high`; `gpt-image-2.5-flare`, `gpt-image-2.5-sunburst`, `gpt-image-2.6-flare`, and `gpt-image-2.6-sunburst` (including `:official` variants) additionally support `xhigh`, `max`. `dall-e-3` options: `hd` or `standard`. `dall-e-2` only supports: `standard`. Official channels are billed based on actual Token usage."
+        },
+        "n": {
+          "rank": 20,
+          "type": "integer",
+          "default": 1,
+          "example": 1,
+          "maximum": 10,
+          "minimum": 1,
+          "description": "The number of images to generate, ranging from 1 to 10. `dall-e-3` is fixed at `1`. The `dall-e-2`, `gpt-image-1` / `gpt-image-1.5` / `gpt-image-2` / `gpt-image-2.5-flare` / `gpt-image-2.5-sunburst` series, as well as the `nano-banana` / `nano-banana-2-lite` / `nano-banana-2` / `nano-banana-2.1` / `nano-banana-pro` series all support `n>1`: the default model and `:reverse` are billed by the number of successfully generated images, while `:official` is charged based on the actual Token usage aggregated across the entire response, and will not be multiplied repeatedly by `n`. Note that `response_format=b64_json` only supports `n=1`; when `n>1`, please use the default URL return. If some images fail to generate, only the successfully generated ones will be returned and billed."
         }
-      }
+      },
+      "source_url": "https://platform.acedata.cloud/api/v1/apis/8f01fe72-8a3e-4872-8d8d-330cde179b3a/",
+      "captured_at": "2026-11-23"
     },
     {
       "service": "nano_banana",

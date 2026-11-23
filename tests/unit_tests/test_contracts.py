@@ -19,5 +19,5 @@ def test_selected_model_ids_and_parameters_exist_in_backend_source():
             official = contract["fields"].get(field)
             if official and "enum" in definition and "enum" in official:
                 assert set(definition["enum"]) <= set(official["enum"])
-            if official and "default" in definition and "enum" in official:
+            if official and definition.get("default") is not None and "enum" in official:
                 assert definition["default"] in official["enum"]
