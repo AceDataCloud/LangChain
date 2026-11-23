@@ -89,7 +89,9 @@
       ],
       "category": "image",
       "publication": "PyPI/GitHub0.1.0stable; fresh install verified",
-      "official_listing": "https://github.com/langchain-ai/docs/pull/6836 (MERGED; live tools directory verified)"
+      "official_listing": "https://github.com/langchain-ai/docs/pull/6836 (MERGED; live tools directory verified)",
+      "source_version": "0.1.1",
+      "model_contract": "contracts/gpt-image.json"
     },
     {
       "slug": "nano-banana",

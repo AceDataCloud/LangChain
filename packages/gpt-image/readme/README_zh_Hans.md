@@ -4,17 +4,17 @@
 
 ## 1. 安装正确的正式包
 
-源码已合入main，**0.1.0正式版wheel和源码包已在PyPI／GitHub公开**，下方普通pip命令可直接安装。[官方目录PR#6836](https://github.com/langchain-ai/docs/pull/6836)已合并，[公开工具目录](https://docs.langchain.com/oss/python/integrations/tools)已能找到本Toolkit。[干净runner安装验收](https://github.com/AceDataCloud/LangChain/actions/runs/39321983859)已成功；官方默认Provider/精选另验。
+本包版本 **0.1.1** 补齐图像模型合同；共用运行时仍依赖 **0.1.0**，其他服务包独立发布。[官方目录PR#6836](https://github.com/langchain-ai/docs/pull/6836)已合并，[公开工具目录](https://docs.langchain.com/oss/python/integrations/tools)已能找到本Toolkit。官方默认Provider/精选另验。
 
 Python 3.10或更新版本，先创建独立环境：
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install langchain-gpt-image-acedatacloud==0.1.0
+python -m pip install langchain-gpt-image-acedatacloud==0.1.1
 ```
 
-Windows PowerShell用 `.venv\Scripts\Activate.ps1` 激活；安装命令可以放在同一行执行。以上仅安装包，不提交模型或媒体请求。GitHub正式安装文件可在[release文件列表](https://github.com/AceDataCloud/LangChain/releases/tag/v0.1.0)核对。
+Windows PowerShell用 `.venv\Scripts\Activate.ps1` 激活；安装命令可以放在同一行执行。以上仅安装包，不提交模型或媒体请求。GitHub正式安装文件可在[release文件列表](https://github.com/AceDataCloud/LangChain/releases/tag/v0.1.1)核对。
 
 ## 2. 注册登录并获取应用Token
 
@@ -79,7 +79,15 @@ print(result["status"], result["terminal"], result["media_urls"])
 
 终态只看工具返回的 `terminal` 及 `status`；失败终态不能当成功。预览媒体／提交成功不代表完成；最终媒体链接仅在结算完成后列出。返回格式为示例，不是本次真实生成截图。工具不自动下载媒体。初版只提供文本生成，不承诺全部edit、extend等高级动作。
 
-## 5. 排错与实际计费
+## 5. 模型与参数
+
+0.1.1 接受已核公开生成合同的全部 24 个模型 ID 和 8 个 quality 值，包括 DALL-E 2/3、GPT Image 2.6 各变体及 Nano Banana 2.1。质量选项仍取决于模型：DALL-E 2 仅支持 `standard`；DALL-E 3 支持 `standard` / `hd`，且 `n=1`。显式不支持的 DALL-E 参数在发请求前报错，不静默替换。
+
+0.1.0 原有五个型号（`gpt-image-1`、`gpt-image-1.5`、`gpt-image-2`、`gpt-image-2.5-flare`、`gpt-image-2.5-sunburst`）未填写的 `quality` / `size` 保留旧版 `auto` 默认值。新增型号未填写时不发送这两个字段；显式传 `None` 也可让旧型号省略字段。`size="auto"` 按提示词选择画布，省略 size 则使用模型默认画布。已有的合法显式选择原样发送。本包提供生成和同任务查询，不提供图像编辑或 GIF 专用参数。
+
+`contracts/gpt-image.json` 保存已核合同。维护者运行 `python scripts/sync_gpt_image_contract.py --refresh` 后审查差异，使用 `--check` 离线校验生成结果；刷新只读取公开文档，不生成图像。
+
+## 6. 排错与实际计费
 
 | 现象 | 检查 |
 | --- | --- |

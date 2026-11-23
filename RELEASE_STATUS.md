@@ -1,3 +1,7 @@
+# GPT Image 0.1.1 contract update
+
+The GPT Image service package independently advances to 0.1.1 with 24 model IDs, eight quality values and DALL-E parameter validation. Core and the other four services retain 0.1.0. Existing five-model defaults are preserved; newly supported models omit optional quality/size unless supplied. The shared HTTP/task runtime is unchanged. Source validation is offline; publication and paid image acceptance are separate steps. The release verification workflow accepts `service=gpt-image` to install this exact independent version from PyPI and GitHub.
+
 # Release status — 2026-10-20
 
 Source PRs #1/#2/#3 are merged. Stable [v0.1.0](https://github.com/AceDataCloud/LangChain/releases/tag/v0.1.0) contains six wheel/source packages. **All six packages now also exist on PyPI at 0.1.0 with both wheel and source archive.** Historical 429 creation-quota failures are resolved for these packages; no repeated upload or replacement account was used.

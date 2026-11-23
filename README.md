@@ -1,5 +1,7 @@
 # Ace Data Cloud for LangChain
 
+GPT Image source 0.1.1 updates its typed generation contract to 24 models and eight quality values; the shared core stays at 0.1.0. See the [GPT Image guide](packages/gpt-image/README.md) for compatible defaults and independent installation.
+
 A named `ChatAceDataCloud` chat model and **five separately installable service toolkits**: Suno, Seedance, HappyHorse, GPT Image and Nano Banana **by Ace Data Cloud**. This project is maintained by Ace Data Cloud; it is not an official client of those service brands.
 
 [简体中文](readme/README_zh_Hans.md) · [Privacy](PRIVACY.md) · [Source](https://github.com/AceDataCloud/LangChain)

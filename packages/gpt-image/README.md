@@ -6,12 +6,12 @@ Install `langchain-gpt-image-acedatacloud` to give a LangChain application typed
 
 ## 1. Install
 
-Install [PyPI `langchain-gpt-image-acedatacloud==0.1.0`](https://pypi.org/project/langchain-gpt-image-acedatacloud/0.1.0/). Stable wheel and source archive are public. Official LangChain [listing PR#6836](https://github.com/langchain-ai/docs/pull/6836) is merged and the [public tools directory](https://docs.langchain.com/oss/python/integrations/tools) lists this Toolkit. Fresh ordinary pip installation and query-tool loading are [verified](https://github.com/AceDataCloud/LangChain/actions/runs/39321983859).
+Install [PyPI `langchain-gpt-image-acedatacloud==0.1.1`](https://pypi.org/project/langchain-gpt-image-acedatacloud/0.1.1/). Official LangChain [listing PR#6836](https://github.com/langchain-ai/docs/pull/6836) is merged and the [public tools directory](https://docs.langchain.com/oss/python/integrations/tools) lists this Toolkit. The shared core dependency stays at 0.1.0; the other service packages are independently versioned.
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install langchain-gpt-image-acedatacloud==0.1.0
+python -m pip install langchain-gpt-image-acedatacloud==0.1.1
 ```
 
 For source installation: `git clone --branch main https://github.com/AceDataCloud/LangChain.git`, `cd LangChain`, then `pip install -e packages/core -e packages/gpt-image`.
@@ -64,6 +64,14 @@ print(result["status"], result["terminal"], result["media_urls"])
 ```
 
 `gpt_image_generate_image` submits one asynchronous request to `/openai/images/generations`. `gpt_image_retrieve_task` calls `/openai/tasks` with `action=retrieve` and the original `id`. A pending result is normal. Query that ID later until `terminal=true`; then inspect success/failure and final media URLs. The example shape is illustrative, not an actual paid result. Advanced edit/extend actions are not exposed in this initial toolkit.
+
+## Model and parameter coverage
+
+Version 0.1.1 accepts all 24 model IDs and eight quality values in the reviewed [public generation API](https://platform.acedata.cloud/api/v1/apis/8f01fe72-8a3e-4872-8d8d-330cde179b3a/), including DALL-E 2/3, GPT Image 2.6 variants and Nano Banana 2.1. Quality choices remain model-specific: DALL-E 2 accepts `standard`; DALL-E 3 accepts `standard` or `hd` and requires `n=1`. Unsupported explicit DALL-E values fail before submission.
+
+For the five models already supported in 0.1.0 (`gpt-image-1`, `gpt-image-1.5`, `gpt-image-2`, `gpt-image-2.5-flare`, `gpt-image-2.5-sunburst`), absent `quality` and `size` retain the existing `auto` defaults. New models omit both fields unless supplied. Explicit `None` omits either field even for an older model. `size="auto"` requests prompt-based canvas selection; an omitted size uses the model's default canvas. Explicit supported values pass through unchanged. This package exposes generation and task lookup; image editing and GIF-specific parameters are not exposed.
+
+The checked-in `contracts/gpt-image.json` owns the typed enum snapshot. Maintainers can explicitly refresh it with `python scripts/sync_gpt_image_contract.py --refresh`, review the diff, and run `--check` offline. Refreshing reads documentation and never generates an image.
 
 ## Troubleshooting and cost
 
