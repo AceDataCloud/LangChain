@@ -1,0 +1,72 @@
+name: Publish one service package
+on:
+  workflow_dispatch:
+    inputs:
+      service:
+        description: Independently versioned service to publish
+        required: true
+        type: choice
+        options: [happyhorse, gpt-image, nano-banana, suno, seedance]
+      version:
+        description: Exact version declared in the selected package
+        required: true
+      ci_run_id:
+        description: Successful main-branch CI run for this exact commit
+        required: true
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: pypi-service-publisher
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    env:
+      SERVICE: ${{ inputs.service }}
+      PACKAGE_VERSION: ${{ inputs.version }}
+      CI_RUN_ID: ${{ inputs.ci_run_id }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify CI provenance and download tested distributions
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import json, os, re, subprocess
+          run_id = os.environ['CI_RUN_ID']
+          assert re.fullmatch(r'[0-9]+', run_id), 'Expected a numeric CI run ID'
+          repo = os.environ['GITHUB_REPOSITORY']
+          run = json.loads(subprocess.check_output(['gh', 'api', f'repos/{repo}/actions/runs/{run_id}']))
+          assert run['repository']['full_name'] == repo
+          assert run['path'] == '.github/workflows/ci.yaml'
+          assert run['event'] == 'push' and run['head_branch'] == 'main'
+          assert run['head_sha'] == os.environ['GITHUB_SHA']
+          assert run['status'] == 'completed' and run['conclusion'] == 'success'
+          subprocess.run(['gh', 'run', 'download', run_id, '--repo', repo,
+                          '--name', 'packages-3.12', '--dir', 'ci-dist'], check=True)
+          PY
+      - name: Select only the requested package and verify its source
+        run: |
+          python scripts/prepare_service_release.py --service "$SERVICE" --version "$PACKAGE_VERSION" --artifacts ci-dist --output release-dist
+          python -m pip install 'twine>=7,<8'
+          python -m twine check release-dist/*
+      - name: Publish with this repository's existing organization secret
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+          TWINE_NON_INTERACTIVE: '1'
+        run: python -m twine upload --repository-url https://upload.pypi.org/legacy/ release-dist/*
+      - name: Preserve exact uploaded artifacts and hashes
+        uses: actions/upload-artifact@v4
+        with:
+          name: published-${{ inputs.service }}-${{ inputs.version }}
+          path: |
+            release-dist/*
+            release-dist.json
+      - name: Install and inspect the exact public package without API calls
+        run: python scripts/verify_published.py --install pypi --service "$SERVICE" --version "$PACKAGE_VERSION"
