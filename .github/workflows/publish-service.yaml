@@ -69,4 +69,13 @@ jobs:
             release-dist/*
             release-dist.json
       - name: Install and inspect the exact public package without API calls
-        run: python scripts/verify_published.py --install pypi --service "$SERVICE" --version "$PACKAGE_VERSION"
+        run: |
+          # Only retry read/install verification while the new PyPI index propagates.
+          # This loop never returns to the upload step.
+          for attempt in $(seq 1 12); do
+            if python scripts/verify_published.py --install pypi --service "$SERVICE" --version "$PACKAGE_VERSION"; then
+              exit 0
+            fi
+            if [ "$attempt" -lt 12 ]; then sleep 5; fi
+          done
+          exit 1
