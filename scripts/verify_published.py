@@ -15,7 +15,7 @@ def main() -> None:
     selection.add_argument("--all-services", action="store_true")
     selection.add_argument(
         "--service",
-        choices=["happyhorse", "gpt-image", "nano-banana", "suno", "seedance"],
+        choices=["acemusic", "happyhorse", "gpt-image", "nano-banana", "suno", "seedance"],
         help="Verify one independently versioned service; its core dependency is resolved by pip",
     )
     parser.add_argument("--install", choices=["pypi", "github"])
@@ -31,6 +31,7 @@ def main() -> None:
     if args.all_services or args.service:
         services += [("suno", "Suno"), ("seedance", "Seedance")]
     if args.service:
+        services.append(("acemusic", "AceMusic"))
         services = [
             (slug, prefix) for slug, prefix in services if slug == args.service.replace("-", "_")
         ]

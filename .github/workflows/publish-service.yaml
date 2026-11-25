@@ -6,7 +6,7 @@ on:
         description: Independently versioned service to publish
         required: true
         type: choice
-        options: [happyhorse, gpt-image, nano-banana, suno, seedance]
+        options: [acemusic, happyhorse, gpt-image, nano-banana, suno, seedance]
       version:
         description: Exact version declared in the selected package
         required: true

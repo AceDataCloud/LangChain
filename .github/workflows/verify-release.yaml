@@ -9,7 +9,7 @@ on:
       service:
         description: Optional independently versioned service (blank retains the grouped release)
         type: choice
-        options: ["", "happyhorse", "gpt-image", "nano-banana", "suno", "seedance"]
+        options: ["", "acemusic", "happyhorse", "gpt-image", "nano-banana", "suno", "seedance"]
         default: ""
       all_pypi:
         description: Verify all six on PyPI only after they exist
