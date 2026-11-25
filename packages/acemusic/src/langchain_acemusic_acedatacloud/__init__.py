@@ -13,7 +13,9 @@ from pydantic import BaseModel, Field
 
 
 class AceMusicInput(StrictInput):
-    prompt: str = Field(min_length=1, description="Describe the song or its musical style.")
+    prompt: str = Field(
+        min_length=1, max_length=20000, description="Describe the song or its musical style."
+    )
     model: Literal["acemusic-v1.1", "acemusic-v1"] = "acemusic-v1.1"
 
 
@@ -32,16 +34,12 @@ class AceMusicGenerate(AceSubmitTool):
 def _group_result(record: dict[str, Any], task_id: str) -> dict[str, Any]:
     # ACE Music records can omit finished_at; a playable individual track may be a preview.
     state = str(record.get("status") or record.get("state") or "").lower()
-    failure = record.get("successful") is False and record.get("finished") is True
-    failure = failure or state in {"partial_failed", "failed", "error", "cancelled", "canceled"}
-    terminal = record.get("finished") is True or state in {"succeeded", "completed", "complete"}
     adapted = dict(record)
-    if failure:
+    if state == "partial_failed":
         adapted["status"] = "failed"
-    elif terminal:
+    elif state == "succeeded":
+        # The shared result parser also supports older records with only a completion timestamp.
         adapted["finished_at"] = record.get("finished_at") or True
-    elif record.get("finished") is False:
-        adapted["finished_at"] = None
     result = task_result(adapted, task_id)
     result["raw"] = record
     return result

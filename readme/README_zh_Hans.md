@@ -1,10 +1,14 @@
 # LangChain 中使用 Ace Data Cloud
 
-本仓库提供原生 `ChatAceDataCloud` 聊天类，以及 Suno、Seedance、HappyHorse、GPT Image、Nano Banana 五个可以分别安装的工具包。它们由 Ace Data Cloud 提供，不冒充服务品牌的官方客户端。源码已合入main；0.1.0六包已全部在PyPI与GitHub发布并完成干净安装；聊天核心、HappyHorse、GPT Image、Nano Banana已有官方目录条目，Suno/Seedance刚提交待审核。PyPI发包、LangChain官方收录和默认Provider列表是独立阶段，实际包版本以发布状态为准。
+GPT Image 源码版本 0.1.1 补齐 24 个模型和 8 个质量选项；共用运行时仍为 0.1.0。旧默认值兼容与独立安装见 [GPT Image 指南](../packages/gpt-image/readme/README_zh_Hans.md)。
+
+本仓库提供原生 `ChatAceDataCloud` 聊天类，以及 Suno、Seedance、HappyHorse、GPT Image、Nano Banana 五个可以分别安装的工具包。它们由 Ace Data Cloud 提供，不冒充服务品牌的官方客户端。源码已合入main；0.1.0六包已全部在PyPI与GitHub发布并完成干净安装；聊天核心和这五个工具包均已有官方目录条目。PyPI发包、LangChain官方收录和默认Provider列表是独立阶段，实际包版本以发布状态为准。
+
+ACE Music 工具包可以从仓库源码安装。见[安装和同 ID 查询示例](../packages/acemusic/README.md)。
 
 ## 安装与密钥
 
-Python 3.10+，先创建独立环境。下面命令以正式版本 `0.1.0` 锁定安装；[发布状态](../RELEASE_STATUS.md)逐项列清PyPI/GitHub可用性。源码已合入main，官方目录申请仍待审。
+Python 3.10+，先创建独立环境。下面命令以正式版本 `0.1.0` 锁定安装；[发布状态](../RELEASE_STATUS.md)逐项列清PyPI/GitHub可用性。
 
 ```bash
 python3 -m venv .venv

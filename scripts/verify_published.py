@@ -11,7 +11,13 @@ import sys
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--version", default="0.1.0rc1")
-    parser.add_argument("--all-services", action="store_true")
+    selection = parser.add_mutually_exclusive_group()
+    selection.add_argument("--all-services", action="store_true")
+    selection.add_argument(
+        "--service",
+        choices=["acemusic", "happyhorse", "gpt-image", "nano-banana", "suno", "seedance"],
+        help="Verify one independently versioned service; its core dependency is resolved by pip",
+    )
     parser.add_argument("--install", choices=["pypi", "github"])
     args = parser.parse_args()
     if not re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+(?:rc[0-9]+)?", args.version):
@@ -22,9 +28,14 @@ def main() -> None:
         ("gpt_image", "GPTImage"),
         ("nano_banana", "NanoBanana"),
     ]
-    if args.all_services:
+    if args.all_services or args.service:
         services += [("suno", "Suno"), ("seedance", "Seedance")]
-    packages = ["langchain-acedatacloud"] + [
+    if args.service:
+        services.append(("acemusic", "AceMusic"))
+        services = [
+            (slug, prefix) for slug, prefix in services if slug == args.service.replace("-", "_")
+        ]
+    packages = ([] if args.service else ["langchain-acedatacloud"]) + [
         "langchain-" + slug.replace("_", "-") + "-acedatacloud" for slug, _ in services
     ]
     if args.install:

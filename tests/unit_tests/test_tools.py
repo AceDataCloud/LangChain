@@ -166,24 +166,21 @@ def test_async_generation_submits_once(slug, cls, endpoint, query):
 
 
 @pytest.mark.parametrize(
-    "state,finished,successful,expected",
+    "state,expected",
     [
-        ("processing", False, False, "pending"),
-        ("partial_failed", True, False, "failed"),
-        ("succeeded", True, True, "succeeded"),
+        ("processing", "pending"),
+        ("partial_failed", "failed"),
+        ("succeeded", "succeeded"),
+        ("failed", "failed"),
     ],
 )
-def test_ace_music_uses_group_status_even_without_finished_at(
-    state, finished, successful, expected
-):
+def test_ace_music_uses_group_status_even_without_finished_at(state, expected):
     def handler(request):
         return httpx.Response(
             200,
             json={
                 "id": "task",
                 "status": state,
-                "finished": finished,
-                "successful": successful,
                 "response": {"data": [{"audio_url": "https://example.org/one.mp3"}]},
             },
         )

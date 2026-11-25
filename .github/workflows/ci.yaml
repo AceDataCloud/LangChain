@@ -20,9 +20,7 @@ jobs:
         run: |
           python -m pip install -r requirements-dev.txt
           python -m pip install -e packages/core
-          for path in packages/*; do
-            python -m pip install --no-deps -e "$path"
-          done
+          python -m pip install --no-deps -e packages/acemusic -e packages/suno -e packages/seedance -e packages/happyhorse -e packages/gpt-image -e packages/nano-banana
       - run: python scripts/check_packages.py
       - run: ruff check .
       - run: ruff format --check .

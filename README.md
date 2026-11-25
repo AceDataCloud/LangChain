@@ -1,14 +1,16 @@
 # Ace Data Cloud for LangChain
 
+GPT Image source 0.1.1 updates its typed generation contract to 24 models and eight quality values; the shared core stays at 0.1.0. See the [GPT Image guide](packages/gpt-image/README.md) for compatible defaults and independent installation.
+
 A named `ChatAceDataCloud` chat model and **separately installable service toolkits**: ACE Music, Suno, Seedance, HappyHorse, GPT Image and Nano Banana **by Ace Data Cloud**. This project is maintained by Ace Data Cloud; it is not an official client of those service brands.
 
 [简体中文](readme/README_zh_Hans.md) · [Privacy](PRIVACY.md) · [Source](https://github.com/AceDataCloud/LangChain)
 
-**Stable 0.1.0:** all six independent distributions are published on PyPI and in the [GitHub release](https://github.com/AceDataCloud/LangChain/releases/tag/v0.1.0). Clean ordinary pip installation and native query-tool loading passed for all six on 2026-10-20. LangChain's public chat/tools directory now lists ChatAceDataCloud, HappyHorseToolkit, GPTImageToolkit and NanoBananaToolkit. Suno and Seedance listing requests are submitted, not yet approved. Official listing is separate from default `init_chat_model` Provider selection, which is not implemented upstream. See [release status](https://github.com/AceDataCloud/LangChain/blob/main/RELEASE_STATUS.md) for evidence. No graphical chat button or new paid-live result is claimed.
+**Stable 0.1.0:** the core and the five original toolkits are published on PyPI and in the [GitHub release](https://github.com/AceDataCloud/LangChain/releases/tag/v0.1.0). Clean ordinary pip installation and native query-tool loading passed for all six on 2026-10-20. LangChain’s directory lists the chat model and the five original toolkits, including [Suno](https://github.com/langchain-ai/docs/pull/6899) and [Seedance](https://github.com/langchain-ai/docs/pull/6896). Official listing is separate from default `init_chat_model` Provider selection, which is not implemented upstream. See [release status](https://github.com/AceDataCloud/LangChain/blob/main/RELEASE_STATUS.md) for evidence. No graphical chat button or new paid-live result is claimed.
 
 ## Install only the integration you need
 
-Use Python 3.10+ in a virtual environment. Each service package installs only its own tool classes plus the shared runtime, not the other four services.
+Use Python 3.10+ in a virtual environment. Each service package installs only its own tool classes plus the shared runtime, without installing other services.
 
 | Integration | Package / official registry destination | Guide |
 | --- | --- | --- |

@@ -28,7 +28,7 @@
       ],
       "category": "music",
       "publication": "PyPI/GitHub0.1.0stable; fresh install verified",
-      "official_listing": "https://github.com/langchain-ai/docs/issues/6877 (OPEN; pending)"
+      "official_listing": "https://github.com/langchain-ai/docs/pull/6899 (MERGED)"
     },
     {
       "slug": "seedance",
@@ -48,7 +48,7 @@
       ],
       "category": "video",
       "publication": "PyPI/GitHub0.1.0stable; fresh install verified",
-      "official_listing": "https://github.com/langchain-ai/docs/issues/6878 (OPEN; pending)"
+      "official_listing": "https://github.com/langchain-ai/docs/pull/6896 (MERGED)"
     },
     {
       "slug": "happyhorse",
@@ -89,7 +89,9 @@
       ],
       "category": "image",
       "publication": "PyPI/GitHub0.1.0stable; fresh install verified",
-      "official_listing": "https://github.com/langchain-ai/docs/pull/6836 (MERGED; live tools directory verified)"
+      "official_listing": "https://github.com/langchain-ai/docs/pull/6836 (MERGED; live tools directory verified)",
+      "source_version": "0.1.1",
+      "model_contract": "contracts/gpt-image.json"
     },
     {
       "slug": "nano-banana",
