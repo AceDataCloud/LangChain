@@ -5,7 +5,7 @@
     "class": "ChatAceDataCloud",
     "provider_id": "acedatacloud",
     "upstream_builtin": false,
-    "publication": "PyPI/GitHub0.1.0stable",
+    "publication": "PyPI 0.1.1 stable; fresh install verified",
     "official_listing": "https://github.com/langchain-ai/docs/pull/6839 (MERGED; live chat directory verified)"
   },
   "services": [
@@ -27,7 +27,7 @@
         "audio"
       ],
       "category": "music",
-      "publication": "PyPI/GitHub0.1.0stable; fresh install verified",
+      "publication": "PyPI 0.1.1 stable; fresh install verified",
       "official_listing": "https://github.com/langchain-ai/docs/pull/6899 (MERGED)"
     },
     {
@@ -47,7 +47,7 @@
         "video"
       ],
       "category": "video",
-      "publication": "PyPI/GitHub0.1.0stable; fresh install verified",
+      "publication": "PyPI 0.1.1 stable; fresh install verified",
       "official_listing": "https://github.com/langchain-ai/docs/pull/6896 (MERGED)"
     },
     {
@@ -67,7 +67,7 @@
         "video"
       ],
       "category": "video",
-      "publication": "PyPI/GitHub0.1.0stable; fresh install verified",
+      "publication": "PyPI 0.1.1 stable; fresh install verified",
       "official_listing": "https://github.com/langchain-ai/docs/pull/6840 (MERGED; live tools directory verified)"
     },
     {
@@ -88,7 +88,7 @@
         "image"
       ],
       "category": "image",
-      "publication": "PyPI/GitHub0.1.0stable; fresh install verified",
+      "publication": "PyPI 0.1.2 stable; fresh install verified",
       "official_listing": "https://github.com/langchain-ai/docs/pull/6836 (MERGED; live tools directory verified)",
       "source_version": "0.1.1",
       "model_contract": "contracts/gpt-image.json"
@@ -111,7 +111,7 @@
         "image"
       ],
       "category": "image",
-      "publication": "PyPI/GitHub0.1.0stable; fresh install verified",
+      "publication": "PyPI 0.1.1 stable; fresh install verified",
       "official_listing": "https://github.com/langchain-ai/docs/pull/6828 (MERGED; live tools directory verified)"
     },
     {
@@ -132,7 +132,7 @@
         "audio"
       ],
       "category": "music",
-      "publication": "PyPI 0.1.0 stable; fresh install verified",
+      "publication": "PyPI 0.1.1 stable; fresh install verified",
       "official_listing": null,
       "official_submission": "https://github.com/langchain-ai/docs/issues/8168"
     },
@@ -152,8 +152,9 @@
         "serp"
       ],
       "category": "search",
-      "publication": "source",
-      "official_listing": null
+      "publication": "PyPI 0.1.0 stable; fresh install verified",
+      "official_listing": null,
+      "official_submission": "https://github.com/langchain-ai/docs/issues/8169"
     }
   ],
   "release": {

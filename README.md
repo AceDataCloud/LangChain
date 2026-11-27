@@ -16,7 +16,7 @@ Use Python 3.10+ in a virtual environment. Each service package installs only it
 | --- | --- | --- |
 | Ace chat model | [`langchain-acedatacloud`](https://pypi.org/project/langchain-acedatacloud/) | [Chat model](#chat-without-a-custom-base-url) |
 | ACE Music | [`langchain-acemusic-acedatacloud`](https://pypi.org/project/langchain-acemusic-acedatacloud/0.1.0/) | [ACE Music](packages/acemusic/README.md) |
-| Google Search | `langchain-serp-acedatacloud` | [Serp toolkit](packages/serp/README.md) |
+| Google Search | [`langchain-serp-acedatacloud`](https://pypi.org/project/langchain-serp-acedatacloud/0.1.0/) | [Serp toolkit](packages/serp/README.md) |
 | Suno by Ace Data Cloud | [`langchain-suno-acedatacloud`](https://pypi.org/project/langchain-suno-acedatacloud/) | [suno](packages/suno/README.md) |
 | Seedance by Ace Data Cloud | [`langchain-seedance-acedatacloud`](https://pypi.org/project/langchain-seedance-acedatacloud/) | [seedance](packages/seedance/README.md) |
 | HappyHorse by Ace Data Cloud | [`langchain-happyhorse-acedatacloud`](https://pypi.org/project/langchain-happyhorse-acedatacloud/) | [happyhorse](packages/happyhorse/README.md) |

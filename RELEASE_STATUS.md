@@ -1,3 +1,18 @@
+# Current PyPI distributions
+
+All eight packages install together in a fresh environment. The [public artifact and LangChain runtime check](https://github.com/AceDataCloud/LangChain/actions/runs/46073698948) checked both distribution hashes, the service artwork, and synchronous and asynchronous native tool entrypoints using controlled HTTP responses. The [ACE Music](https://github.com/langchain-ai/docs/issues/8168) and [Google Search](https://github.com/langchain-ai/docs/issues/8169) directory requests are tracked independently from package publication.
+
+| Package | PyPI version |
+| --- | --- |
+| `langchain-acedatacloud` | [0.1.1](https://pypi.org/project/langchain-acedatacloud/0.1.1/) |
+| `langchain-acemusic-acedatacloud` | [0.1.1](https://pypi.org/project/langchain-acemusic-acedatacloud/0.1.1/) |
+| `langchain-suno-acedatacloud` | [0.1.1](https://pypi.org/project/langchain-suno-acedatacloud/0.1.1/) |
+| `langchain-seedance-acedatacloud` | [0.1.1](https://pypi.org/project/langchain-seedance-acedatacloud/0.1.1/) |
+| `langchain-happyhorse-acedatacloud` | [0.1.1](https://pypi.org/project/langchain-happyhorse-acedatacloud/0.1.1/) |
+| `langchain-gpt-image-acedatacloud` | [0.1.2](https://pypi.org/project/langchain-gpt-image-acedatacloud/0.1.2/) |
+| `langchain-nano-banana-acedatacloud` | [0.1.1](https://pypi.org/project/langchain-nano-banana-acedatacloud/0.1.1/) |
+| `langchain-serp-acedatacloud` | [0.1.0](https://pypi.org/project/langchain-serp-acedatacloud/0.1.0/) |
+
 # ACE Music 0.1.0
 
 The [PyPI release](https://pypi.org/project/langchain-acemusic-acedatacloud/0.1.0/) offers a wheel and source distribution. A [clean Python 3.12 install](https://github.com/AceDataCloud/LangChain/actions/runs/46068069852) verified the native toolkit with LangChain Core, including synchronous and asynchronous retrieval using controlled responses. By default `get_tools()` exposes `acemusic_retrieve_task`. Generation requires `include_generation=True`. The [LangChain docs request](https://github.com/langchain-ai/docs/issues/8168) tracks the separate directory review.
