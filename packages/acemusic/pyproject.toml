@@ -15,7 +15,7 @@ dependencies = ["langchain-acedatacloud==0.1.0"]
 classifiers = ["Programming Language :: Python :: 3", "Operating System :: OS Independent"]
 
 [project.urls]
-Homepage = "https://github.com/AceDataCloud/LangChain"
+Homepage = "https://github.com/AceDataCloud/LangChain/tree/main/packages/acemusic"
 Source = "https://github.com/AceDataCloud/LangChain"
 Issues = "https://github.com/AceDataCloud/LangChain/issues"
 
