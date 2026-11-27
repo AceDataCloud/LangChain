@@ -15,7 +15,16 @@ def main() -> None:
     selection.add_argument("--all-services", action="store_true")
     selection.add_argument(
         "--service",
-        choices=["acemusic", "happyhorse", "gpt-image", "nano-banana", "suno", "seedance"],
+        choices=[
+            "core",
+            "acemusic",
+            "happyhorse",
+            "gpt-image",
+            "nano-banana",
+            "suno",
+            "seedance",
+            "serp",
+        ],
         help="Verify one independently versioned service; its core dependency is resolved by pip",
     )
     parser.add_argument("--install", choices=["pypi", "github"])
@@ -31,11 +40,11 @@ def main() -> None:
     if args.all_services or args.service:
         services += [("suno", "Suno"), ("seedance", "Seedance")]
     if args.service:
-        services.append(("acemusic", "AceMusic"))
+        services += [("acemusic", "AceMusic"), ("serp", "Serp")]
         services = [
             (slug, prefix) for slug, prefix in services if slug == args.service.replace("-", "_")
         ]
-    packages = ([] if args.service else ["langchain-acedatacloud"]) + [
+    packages = (["langchain-acedatacloud"] if args.service in (None, "core") else []) + [
         "langchain-" + slug.replace("_", "-") + "-acedatacloud" for slug, _ in services
     ]
     if args.install:

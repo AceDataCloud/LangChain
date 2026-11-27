@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "langchain-serp-acedatacloud"
+version = "0.1.0"
+description = "Google web search through Ace Data Cloud for LangChain"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name="Ace Data Cloud Dev", email="dev@acedata.cloud"}]
+keywords = ["google", "search", "serp", "langchain", "acedatacloud"]
+dependencies = ["langchain-acedatacloud>=0.1.0,<0.2"]
+classifiers = ["Programming Language :: Python :: 3", "Operating System :: OS Independent"]
+
+[project.urls]
+Homepage = "https://github.com/AceDataCloud/LangChain/tree/main/packages/serp"
+Source = "https://github.com/AceDataCloud/LangChain"
+Issues = "https://github.com/AceDataCloud/LangChain/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/langchain_serp_acedatacloud"]

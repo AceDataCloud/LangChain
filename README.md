@@ -1,12 +1,12 @@
 # Ace Data Cloud for LangChain
 
-GPT Image source 0.1.1 updates its typed generation contract to 24 models and eight quality values; the shared core stays at 0.1.0. See the [GPT Image guide](packages/gpt-image/README.md) for compatible defaults and independent installation.
+<img src="https://raw.githubusercontent.com/AceDataCloud/ModelProviderDify/288b218ac94f7afe2b390d41135abcc61d31c057/_assets/icon.png" width="64" height="64" alt="Ace Data Cloud" />
 
-A named `ChatAceDataCloud` chat model and **separately installable service toolkits**: ACE Music, Suno, Seedance, HappyHorse, GPT Image and Nano Banana **by Ace Data Cloud**. This project is maintained by Ace Data Cloud; it is not an official client of those service brands.
+Use `ChatAceDataCloud` for chat and install separate toolkits for Suno, Seedance, HappyHorse, GPT Image, Nano Banana, ACE Music, or Google Search. Ace Data Cloud maintains these integrations.
 
 [简体中文](readme/README_zh_Hans.md) · [Privacy](PRIVACY.md) · [Source](https://github.com/AceDataCloud/LangChain)
 
-**Stable 0.1.0:** the core and the five original toolkits are published on PyPI and in the [GitHub release](https://github.com/AceDataCloud/LangChain/releases/tag/v0.1.0). Clean ordinary pip installation and native query-tool loading passed for all six on 2026-10-20. LangChain’s directory lists the chat model and the five original toolkits, including [Suno](https://github.com/langchain-ai/docs/pull/6899) and [Seedance](https://github.com/langchain-ai/docs/pull/6896). Official listing is separate from default `init_chat_model` Provider selection, which is not implemented upstream. See [release status](https://github.com/AceDataCloud/LangChain/blob/main/RELEASE_STATUS.md) for evidence. No graphical chat button or new paid-live result is claimed.
+Check the package links for current releases and the project release notes for independent service versions.
 
 ## Install only the integration you need
 
@@ -16,6 +16,7 @@ Use Python 3.10+ in a virtual environment. Each service package installs only it
 | --- | --- | --- |
 | Ace chat model | [`langchain-acedatacloud`](https://pypi.org/project/langchain-acedatacloud/) | [Chat model](#chat-without-a-custom-base-url) |
 | ACE Music | [`langchain-acemusic-acedatacloud`](https://pypi.org/project/langchain-acemusic-acedatacloud/0.1.0/) | [ACE Music](packages/acemusic/README.md) |
+| Google Search | `langchain-serp-acedatacloud` | [Serp toolkit](packages/serp/README.md) |
 | Suno by Ace Data Cloud | [`langchain-suno-acedatacloud`](https://pypi.org/project/langchain-suno-acedatacloud/) | [suno](packages/suno/README.md) |
 | Seedance by Ace Data Cloud | [`langchain-seedance-acedatacloud`](https://pypi.org/project/langchain-seedance-acedatacloud/) | [seedance](packages/seedance/README.md) |
 | HappyHorse by Ace Data Cloud | [`langchain-happyhorse-acedatacloud`](https://pypi.org/project/langchain-happyhorse-acedatacloud/) | [happyhorse](packages/happyhorse/README.md) |
@@ -26,17 +27,17 @@ Use Python 3.10+ in a virtual environment. Each service package installs only it
 python3 -m venv .venv
 source .venv/bin/activate
 # Published stable version:
-python -m pip install langchain-acedatacloud==0.1.0
+python -m pip install langchain-acedatacloud==0.1.1
 # Or one service:
-python -m pip install langchain-happyhorse-acedatacloud==0.1.0
+python -m pip install langchain-happyhorse-acedatacloud==0.1.1
 ```
 
 For source installation, run `git clone --branch main https://github.com/AceDataCloud/LangChain.git`, `cd LangChain`, then `pip install -e packages/core -e packages/suno`. Package artifacts are not proof of official listing.
 
 ## Get the application API Key
 
-1. [Register or sign in → Applications](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=langchain_readme_api_key). If no **General application** exists, choose **Initialize General Application**.
-2. Open the General application. Copy its **API Key**, or choose **Manage Keys → Create** to make a separately named LangChain key. Review expiration, usage limitations and **Allowed APIs**. Allow both the generation and same-ID task query paths used below. Confirm service access, balance and [current pricing](https://platform.acedata.cloud/models?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=langchain_readme_pricing). No trial allowance is promised.
+1. [Register or sign in → Applications](https://platform.acedata.cloud/console/applications?utm_source=github&utm_medium=referral&utm_campaign=evergreen). If no **General application** exists, choose **Initialize General Application**.
+2. Open the General application. Copy its **API Key**, or choose **Manage Keys → Create** to make a separately named LangChain key. Review expiration, usage limitations and **Allowed APIs**. Allow both the generation and same-ID task query paths used below. Confirm service access, balance and [current pricing](https://platform.acedata.cloud/models?utm_source=github&utm_medium=referral&utm_campaign=evergreen). No trial allowance is promised.
 3. Copy the raw token only, without `Bearer `, quotation marks or redacted characters. A `platform-...` account-management token cannot replace this application key.
 
 ![Copy the redacted application API Key or open Manage Keys](https://raw.githubusercontent.com/AceDataCloud/SunoDify/8d3d03570e73324220f111f7fe343da0792a8071/_assets/tutorial/get-api-key-en.png)
@@ -84,7 +85,7 @@ An application deliberately enables generation with `include_generation=True` af
 
 One generation-tool invocation submits one request with `async=true`, returns a task ID, and does not loop or retry. Query tools call the service's task endpoint with the **same** ID. A successful submission or preview URL is not terminal completion. The normalized result exposes `terminal` and `status`; a pending result must be queried again later, never regenerated merely to poll. Media URLs are exposed as final only after `finished_at`; raw API data remains available for diagnosis. The tools do not download remote media.
 
-Inspect [Usage History](https://platform.acedata.cloud/console/usages?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=langchain_readme_usage) for actual Credits and uncertain submissions. Token counts and package downloads are not revenue. No integration test is configured to issue paid calls in CI.
+Inspect [Usage History](https://platform.acedata.cloud/console/usages?utm_source=github&utm_medium=referral&utm_campaign=evergreen) for actual Credits and uncertain submissions. Token counts and package downloads are not revenue. No integration test is configured to issue paid calls in CI.
 
 ## Troubleshooting
 

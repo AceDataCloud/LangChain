@@ -2,18 +2,20 @@
 
 GPT Image 源码版本 0.1.1 补齐 24 个模型和 8 个质量选项；共用运行时仍为 0.1.0。旧默认值兼容与独立安装见 [GPT Image 指南](../packages/gpt-image/readme/README_zh_Hans.md)。
 
-本仓库提供原生 `ChatAceDataCloud` 聊天类，以及 Suno、Seedance、HappyHorse、GPT Image、Nano Banana 五个可以分别安装的工具包。它们由 Ace Data Cloud 提供，不冒充服务品牌的官方客户端。源码已合入main；0.1.0六包已全部在PyPI与GitHub发布并完成干净安装；聊天核心和这五个工具包均已有官方目录条目。PyPI发包、LangChain官方收录和默认Provider列表是独立阶段，实际包版本以发布状态为准。
+本仓库提供原生 `ChatAceDataCloud` 聊天模型，以及 Suno、Seedance、HappyHorse、GPT Image、Nano Banana、ACE Music 和 Google Search 的独立工具包。
 
 ACE Music 工具包可以从仓库源码安装。见[安装和同 ID 查询示例](../packages/acemusic/README.md)。
 
+Google Search 可使用独立的 [SerpToolkit](../packages/serp/README.md)，显式调用一次时执行一次按量搜索。
+
 ## 安装与密钥
 
-Python 3.10+，先创建独立环境。下面命令以正式版本 `0.1.0` 锁定安装；[发布状态](../RELEASE_STATUS.md)逐项列清PyPI/GitHub可用性。
+Python 3.10+，先创建独立环境。下面命令锁定聊天核心包的当前版本。[发布状态](../RELEASE_STATUS.md)逐项列清PyPI/GitHub可用性。
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install langchain-acedatacloud==0.1.0
+python -m pip install langchain-acedatacloud==0.1.1
 ```
 
 | 服务 | 中文安装、Key填写和同ID查询教程 |
@@ -26,9 +28,9 @@ python -m pip install langchain-acedatacloud==0.1.0
 
 各独立指南提供普通pip精确版本命令及当前官方目录状态。源码安装可用 `git clone --branch main https://github.com/AceDataCloud/LangChain.git`，`cd LangChain` 后再安装所需目录；main已包含实现。
 
-1. [注册／登录 Ace → 应用](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=langchain_zh_api_key)，没有通用应用时先初始化。
+1. [注册／登录 Ace → 应用](https://platform.acedata.cloud/console/applications?utm_source=github&utm_medium=referral&utm_campaign=evergreen)，没有通用应用时先初始化。
 2. 打开通用应用，复制 API Key，或“管理密钥 → 创建”一个单独命名的 LangChain Key。
-3. 检查服务权限、余额、有效期、用量和允许的 API，同时允许对应生成和任务查询接口；查看[当前价格](https://platform.acedata.cloud/models?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=langchain_zh_pricing)。
+3. 检查服务权限、余额、有效期、用量和允许的 API，同时允许对应生成和任务查询接口；查看[当前价格](https://platform.acedata.cloud/models?utm_source=github&utm_medium=referral&utm_campaign=evergreen)。
 
 ![复制已遮挡的应用密钥或进入管理](../docs/assets/get-api-key-en.png)
 
@@ -66,6 +68,6 @@ print([tool.name for tool in kit.get_tools()])  # 默认仅查询，不发网络
 
 ## 常见问题
 
-401 检查原始 Key 和环境变量；403 检查余额、权限、有效期和 API 限制；429 降低并发；超时或 5xx 先查原任务与[使用历史](https://platform.acedata.cloud/console/usages?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=langchain_zh_usage)再决定是否重发。用量 tokens 不是实际扣费 Credits；安装数不是收入。当前没有新增付费 live 证明或增长数据。
+401 检查原始 Key 和环境变量；403 检查余额、权限、有效期和 API 限制；429 降低并发；超时或 5xx 先查原任务与[使用历史](https://platform.acedata.cloud/console/usages?utm_source=github&utm_medium=referral&utm_campaign=evergreen)再决定是否重发。用量 tokens 不是实际扣费 Credits；安装数不是收入。当前没有新增付费 live 证明或增长数据。
 
 本集成是开发者 Python 入口，不新增图形聊天按钮。五项服务的英文专属教程在 `packages/`，包含精确工具名、路径、安装和查询示例。官方目录遵循“先发包，再 listing issue，由维护者触发”的流程；准备材料在 `submissions/`。

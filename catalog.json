@@ -135,6 +135,25 @@
       "publication": "PyPI 0.1.0 stable; fresh install verified",
       "official_listing": null,
       "official_submission": "https://github.com/langchain-ai/docs/issues/8168"
+    },
+    {
+      "slug": "serp",
+      "display_name": "Google Search by Ace Data Cloud",
+      "package": "langchain-serp-acedatacloud",
+      "module": "langchain_serp_acedatacloud",
+      "toolkit": "SerpToolkit",
+      "tool_names": [
+        "serp_google_search"
+      ],
+      "endpoint": "/serp/google",
+      "keywords": [
+        "google",
+        "search",
+        "serp"
+      ],
+      "category": "search",
+      "publication": "source",
+      "official_listing": null
     }
   ],
   "release": {

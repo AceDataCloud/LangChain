@@ -13,7 +13,16 @@ from pathlib import Path
 import tomllib
 
 ROOT = Path(__file__).resolve().parents[1]
-SERVICES = ("acemusic", "happyhorse", "gpt-image", "nano-banana", "suno", "seedance")
+SERVICES = (
+    "core",
+    "acemusic",
+    "happyhorse",
+    "gpt-image",
+    "nano-banana",
+    "suno",
+    "seedance",
+    "serp",
+)
 
 
 def prepare(service: str, version: str, artifacts: Path, output: Path) -> None:
