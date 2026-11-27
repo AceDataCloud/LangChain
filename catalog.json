@@ -132,8 +132,9 @@
         "audio"
       ],
       "category": "music",
-      "publication": "source",
-      "official_listing": null
+      "publication": "PyPI 0.1.0 stable; fresh install verified",
+      "official_listing": null,
+      "official_submission": "https://github.com/langchain-ai/docs/issues/8168"
     }
   ],
   "release": {

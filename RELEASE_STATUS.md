@@ -1,3 +1,7 @@
+# ACE Music 0.1.0
+
+The [PyPI release](https://pypi.org/project/langchain-acemusic-acedatacloud/0.1.0/) offers a wheel and source distribution. A [clean Python 3.12 install](https://github.com/AceDataCloud/LangChain/actions/runs/46068069852) verified the native toolkit with LangChain Core, including synchronous and asynchronous retrieval using controlled responses. By default `get_tools()` exposes `acemusic_retrieve_task`. Generation requires `include_generation=True`. The [LangChain docs request](https://github.com/langchain-ai/docs/issues/8168) tracks the separate directory review.
+
 # GPT Image 0.1.1 contract update
 
 The GPT Image service package independently advances to 0.1.1 with 24 model IDs, eight quality values and DALL-E parameter validation. Core and the other four services retain 0.1.0. Existing five-model defaults are preserved; newly supported models omit optional quality/size unless supplied. The shared HTTP/task runtime is unchanged. Source validation is offline; publication and paid image acceptance are separate steps. The release verification workflow accepts `service=gpt-image` to install this exact independent version from PyPI and GitHub.
