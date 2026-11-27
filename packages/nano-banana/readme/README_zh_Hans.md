@@ -11,16 +11,16 @@ Python 3.10或更新版本，先创建独立环境：
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install langchain-nano-banana-acedatacloud==0.1.0
+python -m pip install langchain-nano-banana-acedatacloud==0.1.1
 ```
 
 Windows PowerShell用 `.venv\Scripts\Activate.ps1` 激活；安装命令可以放在同一行执行。以上仅安装包，不提交模型或媒体请求。GitHub正式安装文件可在[release文件列表](https://github.com/AceDataCloud/LangChain/releases/tag/v0.1.0)核对。
 
 ## 2. 注册登录并获取应用Token
 
-1. 打开[Ace应用页](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=langchain_nano_banana_zh_api_key)注册或登录。没有通用应用时先点 **Initialize General Application**。
+1. 打开[Ace应用页](https://platform.acedata.cloud/console/applications?utm_source=github&utm_medium=referral&utm_campaign=evergreen)注册或登录。没有通用应用时先点 **Initialize General Application**。
 2. 进入 **General application**。图中1复制现有API Key，图中2打开 **Manage Keys → Create**。建议专门命名为 `LangChain Nano Banana`，方便撤销/轮换。
-3. 检查有效期、用量限额和 **Allowed APIs**，同时允许 `/nano-banana/images` 与 `/nano-banana/tasks`。确认Nano Banana权限、余额和[当前模型／服务价格](https://platform.acedata.cloud/models?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=langchain_nano_banana_zh_pricing)，不承诺固定试用金。
+3. 检查有效期、用量限额和 **Allowed APIs**，同时允许 `/nano-banana/images` 与 `/nano-banana/tasks`。确认Nano Banana权限、余额和[当前模型／服务价格](https://platform.acedata.cloud/models?utm_source=github&utm_medium=referral&utm_campaign=evergreen)，不承诺固定试用金。
 
 ![真实控制台历史截图：复制Key或进入管理，凭据已遮挡](https://raw.githubusercontent.com/AceDataCloud/SunoDify/8d3d03570e73324220f111f7fe343da0792a8071/_assets/tutorial/get-api-key-en.png)
 
@@ -87,7 +87,7 @@ print(result["status"], result["terminal"], result["media_urls"])
 | 403 | 服务权限、余额、有效期、额度、Allowed APIs和响应中的策略说明。 |
 | 429 | 降低并发，等待后再决定；不要打开收费自动重试。 |
 | pending／媒体为空 | 查同一ID；不要重新生成。 |
-| 超时／5xx | 先查原任务和[使用历史](https://platform.acedata.cloud/console/usages?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=langchain_nano_banana_zh_usage)，再决定是否重新提交。 |
+| 超时／5xx | 先查原任务和[使用历史](https://platform.acedata.cloud/console/usages?utm_source=github&utm_medium=referral&utm_campaign=evergreen)，再决定是否重新提交。 |
 | 媒体无法打开 | 核实任务成功终态、返回URL有效期和本机网络。 |
 
 实际扣费以Credits使用历史为准；模型tokens、安装次数、候选下载不是营收。不要向维护者发送Key；排查提供task/trace ID即可。本指南的mock／候选安装验证不等于真实生成、终态媒体与唯一账单验收。

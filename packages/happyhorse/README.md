@@ -6,20 +6,20 @@ Install `langchain-happyhorse-acedatacloud` to give a LangChain application type
 
 ## 1. Install
 
-Install [PyPI `langchain-happyhorse-acedatacloud==0.1.0`](https://pypi.org/project/langchain-happyhorse-acedatacloud/0.1.0/). Stable wheel and source archive are public. Official LangChain [listing PR#6840](https://github.com/langchain-ai/docs/pull/6840) is merged and the [public tools directory](https://docs.langchain.com/oss/python/integrations/tools) lists this Toolkit. Fresh ordinary pip installation and query-tool loading are [verified](https://github.com/AceDataCloud/LangChain/actions/runs/39321983859).
+Install [PyPI `langchain-happyhorse-acedatacloud==0.1.1`](https://pypi.org/project/langchain-happyhorse-acedatacloud/0.1.0/). Stable wheel and source archive are public. Official LangChain [listing PR#6840](https://github.com/langchain-ai/docs/pull/6840) is merged and the [public tools directory](https://docs.langchain.com/oss/python/integrations/tools) lists this Toolkit. Fresh ordinary pip installation and query-tool loading are [verified](https://github.com/AceDataCloud/LangChain/actions/runs/39321983859).
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install langchain-happyhorse-acedatacloud==0.1.0
+python -m pip install langchain-happyhorse-acedatacloud==0.1.1
 ```
 
 For source installation: `git clone --branch main https://github.com/AceDataCloud/LangChain.git`, `cd LangChain`, then `pip install -e packages/core -e packages/happyhorse`.
 
 ## Get the application API Key
 
-1. [Register or sign in → Applications](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=langchain_happyhorse_api_key). If no **General application** exists, choose **Initialize General Application**.
-2. Open the General application. Copy its **API Key**, or choose **Manage Keys → Create** to make a separately named LangChain key. Review expiration, usage limitations and **Allowed APIs**. Allow both the generation and same-ID task query paths used below. Confirm service access, balance and [current pricing](https://platform.acedata.cloud/models?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=langchain_happyhorse_pricing). No trial allowance is promised.
+1. [Register or sign in → Applications](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen). If no **General application** exists, choose **Initialize General Application**.
+2. Open the General application. Copy its **API Key**, or choose **Manage Keys → Create** to make a separately named LangChain key. Review expiration, usage limitations and **Allowed APIs**. Allow both the generation and same-ID task query paths used below. Confirm service access, balance and [current pricing](https://platform.acedata.cloud/models?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen). No trial allowance is promised.
 3. Copy the raw token only, without `Bearer `, quotation marks or redacted characters. A `platform-...` account-management token cannot replace this application key.
 
 ![Copy the redacted application API Key or open Manage Keys](https://raw.githubusercontent.com/AceDataCloud/SunoDify/8d3d03570e73324220f111f7fe343da0792a8071/_assets/tutorial/get-api-key-en.png)
@@ -50,7 +50,7 @@ There is no service-provider selection GUI in this package. Supply these LangCha
 
 ## 3. First use, then query the same ID
 
-After reviewing [current service prices](https://platform.acedata.cloud/models?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=langchain_happyhorse_pricing) and deliberately authorizing one generation:
+After reviewing [current service prices](https://platform.acedata.cloud/models?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen) and deliberately authorizing one generation:
 
 ```python
 kit = HappyHorseToolkit(client=AceAPIClient(), include_generation=True)
@@ -67,4 +67,4 @@ print(result["status"], result["terminal"], result["media_urls"])
 
 ## Troubleshooting and cost
 
-401: raw Key or token environment; 403: permissions, balance, expiry, Allowed APIs and response details; 429: reduce concurrency. For pending or a timeout, inspect the same task before any new submission. No automatic retries or hidden polling are performed. [Usage History](https://platform.acedata.cloud/console/usages?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=langchain_happyhorse_usage) owns actual Credits. Avoid printing credentials or sending them to a model.
+401: raw Key or token environment; 403: permissions, balance, expiry, Allowed APIs and response details; 429: reduce concurrency. For pending or a timeout, inspect the same task before any new submission. No automatic retries or hidden polling are performed. [Usage History](https://platform.acedata.cloud/console/usages?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen) owns actual Credits. Avoid printing credentials or sending them to a model.
