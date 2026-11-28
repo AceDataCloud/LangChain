@@ -190,3 +190,48 @@ def test_ace_music_uses_group_status_even_without_finished_at(state, expected):
     assert record["status"] == expected
     assert bool(record["media_urls"]) == (expected == "succeeded")
     assert record["raw"]["status"] == state
+
+
+def test_acemusic_asset_tools_are_opt_in_and_keep_the_same_endpoints():
+    from langchain_acemusic_acedatacloud import AceMusicToolkit
+
+    calls = []
+
+    def handler(request):
+        body = json.loads(request.content)
+        calls.append((request.url.path, body))
+        return httpx.Response(
+            200,
+            json={"task_id": "imported"}
+            if body.get("action") != "retrieve"
+            else {"items": [], "count": 0},
+        )
+
+    client = toolkit("acemusic", "AceMusic", handler).client
+    free = AceMusicToolkit(client=client, include_assets=True).get_tools()
+    assert {tool.name for tool in free} == {"acemusic_retrieve_assets", "acemusic_retrieve_task"}
+    tools = {
+        t.name: t
+        for t in AceMusicToolkit(
+            client=client, include_assets=True, include_generation=True
+        ).get_tools()
+    }
+    tools["acemusic_upload_asset"].invoke({"type": "midi", "url": "https://example.org/ref.mid"})
+    assert asyncio.run(tools["acemusic_retrieve_assets"].ainvoke({"page": 2})) == {
+        "items": [],
+        "count": 0,
+    }
+    assert calls == [
+        (
+            "/acemusic/assets",
+            {
+                "type": "midi",
+                "url": "https://example.org/ref.mid",
+                "action": "upload",
+                "async": True,
+            },
+        ),
+        ("/acemusic/assets", {"action": "retrieve", "page": 2}),
+    ]
+    with pytest.raises(ValidationError):
+        tools["acemusic_generate_audio"].invoke({"prompt": "A song", "asset_id": "a"})

@@ -122,7 +122,9 @@
       "toolkit": "AceMusicToolkit",
       "tool_names": [
         "acemusic_generate_audio",
-        "acemusic_retrieve_task"
+        "acemusic_retrieve_task",
+        "acemusic_upload_asset",
+        "acemusic_retrieve_assets"
       ],
       "endpoint": "/acemusic/audios",
       "task_endpoint": "/acemusic/tasks",
