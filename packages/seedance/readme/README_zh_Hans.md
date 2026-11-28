@@ -18,7 +18,7 @@ Windows PowerShell用 `.venv\Scripts\Activate.ps1` 激活；安装命令可以�
 
 ## 2. 注册登录并获取应用Token
 
-1. 打开[Ace应用页](https://platform.acedata.cloud/console/applications?utm_source=github&utm_medium=referral&utm_campaign=evergreen)注册或登录。没有通用应用时先点 **Initialize General Application**。
+1. 打开[Ace应用页](https://platform.acedata.cloud/console/applications?utm_source=github&utm_medium=referral&utm_campaign=evergreen)注册或登录，打开**通用应用**。
 2. 进入 **General application**。图中1复制现有API Key，图中2打开 **Manage Keys → Create**。建议专门命名为 `LangChain Seedance`，方便撤销/轮换。
 3. 检查有效期、用量限额和 **Allowed APIs**，同时允许 `/seedance/videos` 与 `/seedance/tasks`。确认Seedance权限、余额和[当前模型／服务价格](https://platform.acedata.cloud/models?utm_source=github&utm_medium=referral&utm_campaign=evergreen)，不承诺固定试用金。
 

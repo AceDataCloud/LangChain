@@ -28,7 +28,7 @@ python -m pip install langchain-acedatacloud==0.1.1
 
 各独立指南提供普通pip精确版本命令及当前官方目录状态。源码安装可用 `git clone --branch main https://github.com/AceDataCloud/LangChain.git`，`cd LangChain` 后再安装所需目录；main已包含实现。
 
-1. [注册／登录 Ace → 应用](https://platform.acedata.cloud/console/applications?utm_source=github&utm_medium=referral&utm_campaign=evergreen)，没有通用应用时先初始化。
+1. [注册／登录 Ace → 应用](https://platform.acedata.cloud/console/applications?utm_source=github&utm_medium=referral&utm_campaign=evergreen)，打开**通用应用**。
 2. 打开通用应用，复制 API Key，或“管理密钥 → 创建”一个单独命名的 LangChain Key。
 3. 检查服务权限、余额、有效期、用量和允许的 API，同时允许对应生成和任务查询接口；查看[当前价格](https://platform.acedata.cloud/models?utm_source=github&utm_medium=referral&utm_campaign=evergreen)。
 
