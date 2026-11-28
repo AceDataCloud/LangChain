@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "langchain-acemusic-acedatacloud"
-version = "0.1.1"
+version = "0.2.0"
 description = "ACE Music by Ace Data Cloud LangChain toolkit"
 readme = "README.md"
 requires-python = ">=3.10"
